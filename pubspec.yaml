@@ -17,6 +17,14 @@ dependencies:
 
   #state management
   get: ^4.6.6
+  get_storage: ^2.1.1
+
+
+  #utility packages
+  http: ^1.1.0
+  intl: ^0.18.1
+  logger: ^2.0.1
+  url_launcher: ^6.1.12
 
 dev_dependencies:
   flutter_test:
