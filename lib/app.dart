@@ -9,7 +9,7 @@ class App extends StatelessWidget {
     print("current height " + MediaQuery.of(context).size.height.toString());
     print("current width " + MediaQuery.of(context).size.width.toString());
     return MaterialApp(
-
+      debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
       theme:SAppTheme.lightTheme,
       darkTheme: SAppTheme.darkTheme,
