@@ -1,5 +1,7 @@
 class SText{
 
+  static const String loginTitle = "Welcome back,";
+  static const String loginSubTitle = "Discover Limitless Choices and Unmatched Convenience";
 
   static const String onBoardingTitle1 = "Choose Your Product";
   static const String onBoardingTitle2 = "Select payment Method";
@@ -11,5 +13,7 @@ class SText{
 
   static const String homeAppbarTitle = "Good day for shopping";
   static const String homeAppbarSubTitle = "Prashant Manna";
+
+
 
 }

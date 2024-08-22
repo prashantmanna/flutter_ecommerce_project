@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_ecommerce_project/features/authentication/screens/login/login.dart';
 import 'package:get/get.dart';
 
 class OnboardingController extends GetxController{
@@ -13,7 +14,7 @@ class OnboardingController extends GetxController{
 }
   void nextPage(){
     if(current_index.value == 2){
-      //Get.to(login);
+      Get.offAll(const Login());
     }else{
       int page = current_index.value + 1;
       pageController.jumpToPage(page);
