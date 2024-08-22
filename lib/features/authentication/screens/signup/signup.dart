@@ -1,51 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_project/common/loginsignup/AppButtonSignIn.dart';
+import 'package:flutter_ecommerce_project/common/loginsignup/AppDivider.dart';
+import 'package:flutter_ecommerce_project/utils/constants/colors.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
+import 'package:flutter_ecommerce_project/utils/helpers/helper_functions.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+
+import '../../../../common/widgets/signup/SignUpForm.dart';
+
 class Signup extends StatelessWidget {
   const Signup({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final dark = SHelperFunctions.isDarkMode(context);
     return Scaffold(
       appBar: AppBar(),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(SSizes.defaultSpace),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               //title
-              Text("Let's create your account",style: Theme.of(context).textTheme.headlineMedium,),
+              Text(
+                "Let's create your account",
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
 
-              const SizedBox(height: SSizes.spaceBtwSections,),
+              const SizedBox(
+                height: SSizes.spaceBtwSections,
+              ),
               //form
-              Form(child: Column(
-                children: [
-                  Row(
-                    children: [
-                      Expanded(
-                        child: TextFormField(
-                          decoration: const InputDecoration(
-                            labelText: "first name",
-                            prefixIcon: Icon(Iconsax.user),
-                          ),
-                          expands: false,
-                        ),
-                      ),
-                      const SizedBox(width: SSizes.spaceBtwInputFields,),
-                      Expanded(
-                        child: TextFormField(
-                          decoration: const InputDecoration(
-                            labelText: "last name",
-                            prefixIcon: Icon(Iconsax.user),
-                          ),
-                          expands: false,
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ))
-              
+              SignUpForm(dark: dark),
+              const SizedBox(height: SSizes.spaceBtwSections,),
+              AppDivider(dark: dark, text: "or sign up with".capitalize!),
+              const SizedBox(height: SSizes.spaceBtwSections,),
+              const AppButtonSign(),
             ],
           ),
         ),
@@ -53,3 +45,5 @@ class Signup extends StatelessWidget {
     );
   }
 }
+
+
