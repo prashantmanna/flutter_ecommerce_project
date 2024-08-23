@@ -16,22 +16,37 @@ class SuccessScreen extends StatelessWidget {
           child: Column(
             children: [
               Image(
-                width: SSizes.screenWidth,
-                  image: const AssetImage("assets/images/techno-user-profile-on-phone-screen.png")
+                  width: SSizes.screenWidth,
+                  image: const AssetImage(
+                      "assets/images/techny-user-profile-on-phone-screen.png")),
+              const SizedBox(
+                height: SSizes.spaceBtwItems,
               ),
-              const SizedBox(height: SSizes.spaceBtwItems,),
-              Text("Your account successfully created!",style: Theme.of(context).textTheme.headlineMedium,textAlign: TextAlign.center,),
-              const SizedBox(height: SSizes.spaceBtwItems,),
-              Text("Welcome to your ultimate shopping destination your account is created.Unleash the joy of seamless online shopping",style: Theme.of(context).textTheme.labelLarge,textAlign: TextAlign.center,),
-              const SizedBox(height: SSizes.spaceBtwSections,),
+              Text(
+                "Your account successfully created!",
+                style: Theme.of(context).textTheme.headlineMedium,
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(
+                height: SSizes.spaceBtwItems,
+              ),
+              Text(
+                "Welcome to your ultimate shopping destination your account is created.Unleash the joy of seamless online shopping",
+                style: Theme.of(context).textTheme.labelLarge,
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(
+                height: SSizes.spaceBtwSections,
+              ),
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: ()=>Get.to(() => const Login()),
-                  child: const Text("Continue",),
+                  onPressed: () => Get.to(() => const Login()),
+                  child: const Text(
+                    "Continue",
+                  ),
                 ),
               )
-
             ],
           ),
         ),

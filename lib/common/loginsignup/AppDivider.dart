@@ -19,7 +19,7 @@ class AppDivider extends StatelessWidget {
       children: [
         Flexible(
             child: Divider(
-              color: dark ? Scolors.darkGrey : Scolors.grey,
+              color: dark ? Scolors.white : Scolors.dark,
               thickness: 0.5,
               indent: 60,
               endIndent: 5,
@@ -30,7 +30,7 @@ class AppDivider extends StatelessWidget {
         ),
         Flexible(
             child: Divider(
-              color: dark ? Scolors.darkGrey : Scolors.grey,
+              color: dark ? Scolors.white : Scolors.dark,
               thickness: 0.5,
               indent: 5,
               endIndent: 60,
