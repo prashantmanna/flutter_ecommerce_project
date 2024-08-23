@@ -1,5 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_project/common/widgets/appbar/CustomAppBar.dart';
+import 'package:flutter_ecommerce_project/utils/constants/colors.dart';
+import 'package:flutter_ecommerce_project/utils/constants/text_string.dart';
 import '../../../../../common/custom_shapes/PrimaryHeaderContainer.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,7 +14,15 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             PrimaryHeaderContainer(
-              child: Container(),
+              child: Column(
+                children: [
+                  CustomAppbar(title: Column(
+                    children: [
+                      Text(SText.homeAppbarTitle,style: Theme.of(context).textTheme.headlineMedium!.apply(color: Scolors.white),)
+                    ],
+                  )),
+                ],
+              ),
             )
           ],
         ),
