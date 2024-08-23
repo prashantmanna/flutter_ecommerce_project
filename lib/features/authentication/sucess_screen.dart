@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/common/styles/spacingStyle.dart';
-import 'package:flutter_ecommerce_project/features/authentication/screens/login/login.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
-import 'package:get/get.dart';
 
 class SuccessScreen extends StatelessWidget {
-  const SuccessScreen({super.key});
+  final String image,title,subtitle;
+  final VoidCallback callback;
+  const SuccessScreen({super.key, required this.image, required this.title, required this.subtitle, required this.callback});
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +17,13 @@ class SuccessScreen extends StatelessWidget {
             children: [
               Image(
                   width: SSizes.screenWidth,
-                  image: const AssetImage(
-                      "assets/images/techny-user-profile-on-phone-screen.png")),
+                  image: AssetImage(
+                      image)),
               const SizedBox(
                 height: SSizes.spaceBtwItems,
               ),
               Text(
-                "Your account successfully created!",
+                title,
                 style: Theme.of(context).textTheme.headlineMedium,
                 textAlign: TextAlign.center,
               ),
@@ -31,7 +31,7 @@ class SuccessScreen extends StatelessWidget {
                 height: SSizes.spaceBtwItems,
               ),
               Text(
-                "Welcome to your ultimate shopping destination your account is created.Unleash the joy of seamless online shopping",
+                subtitle,
                 style: Theme.of(context).textTheme.labelLarge,
                 textAlign: TextAlign.center,
               ),
@@ -41,7 +41,7 @@ class SuccessScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () => Get.to(() => const Login()),
+                  onPressed: callback,
                   child: const Text(
                     "Continue",
                   ),

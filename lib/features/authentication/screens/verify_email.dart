@@ -63,7 +63,12 @@ class VerifyEmail extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Get.to(() => const SuccessScreen());
+                    Get.to(() => SuccessScreen(
+                      image: "assets/images/techny-user-profile-on-phone-screen.png",
+                      title: "Your account created successfully",
+                      subtitle: "Welcome to ultimate shopping destination.Your account is created.Unleash the joy of seamless online shopping",
+                      callback: () => Get.to(() => Login()),
+                    ));
                   },
                   child: const Text("Continue"),
                 ),
