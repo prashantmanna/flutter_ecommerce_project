@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -7,6 +8,7 @@ import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import '../../../../common/custom_shapes/PrimaryHeaderContainer.dart';
 import '../../../../common/custom_shapes/container/mySearchBar.dart';
 import '../../../../common/widgets/Homecategory/HomeCategory.dart';
+import '../../../../common/widgets/banner/RoundedBanner.dart';
 import '../../../../common/widgets/text/SectionHeading.dart';
 import 'widgets/home_appbar.dart';
 
@@ -20,8 +22,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             PrimaryHeaderContainer(
-                child:
-                Column(
+                child: Column(
               children: [
                 home_appbar(),
                 SizedBox(
@@ -49,22 +50,38 @@ class HomeScreen extends StatelessWidget {
                       HomeCategories()
                     ],
                   ),
-
                 ),
                 //body
-
-
               ],
-            )
-            ),
+            )),
             Padding(
-              padding: EdgeInsets.all(SSizes.defaultSpace),
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(SSizes.lg),
-                ),
-                child: const Image(image: AssetImage(SImages.banner3),fit: BoxFit.fill,),
-              ),
+              padding: const EdgeInsets.only(
+                  left: SSizes.defaultSpace, right: SSizes.defaultSpace),
+              child: Column(
+                children: [
+                  CarouselSlider(
+                    options: CarouselOptions(
+                      viewportFraction: 1
+                    ),
+                    items: [
+                      RoundedImage(
+                        imageUrl: SImages.banner1,
+                        fit: BoxFit.cover,
+                      ),
+                      RoundedImage(
+                        imageUrl: SImages.banner2,
+                        fit: BoxFit.cover,
+                      ),
+                      RoundedImage(
+                        imageUrl: SImages.banner3,
+                        fit: BoxFit.cover,
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: SSizes.spaceBtwItems,),
+
+                ],
+              )
             ),
           ],
         ),
@@ -72,4 +89,5 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
 
