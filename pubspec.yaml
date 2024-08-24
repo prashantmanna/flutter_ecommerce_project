@@ -27,6 +27,7 @@ dependencies:
   url_launcher: ^6.1.12
   flutter_native_splash: ^2.4.1
   smooth_page_indicator: ^1.2.0
+  carousel_slider: ^5.0.0
 
 
 dev_dependencies:
@@ -38,13 +39,16 @@ flutter:
   uses-material-design: true
   #assets
   assets:
-    - assets/images/
     - assets/icons/
     - assets/logos/
     - assets/fonts/
     - assets/videos/
     - assets/images/onBoardingImages/
-  
+    - assets/images/onboarding_photos/
+    - assets/images/product_categories/
+    - assets/images/app_screen/
+    - assets/images/banner/
+
   fonts:
     - family: Poppins
       fonts:
