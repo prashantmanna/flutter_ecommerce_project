@@ -20,9 +20,10 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback? leadingOnPressed;
 
   @override
+  @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: SSizes.md),
+      padding: const EdgeInsets.symmetric(horizontal: SSizes.md),
       child: AppBar(
         automaticallyImplyLeading: false,
         leading: showBackArrow
@@ -32,16 +33,16 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
         )
             : leadingIcon != null
             ? IconButton(
-          onPressed: leadingOnPressed, // Directly assign the callback
+          onPressed: leadingOnPressed,
           icon: Icon(leadingIcon),
         )
             : null,
-
         title: title,
         actions: actions,
       ),
     );
   }
+
 
   @override
   Size get preferredSize => Size.fromHeight(SDeviceUtility.getAppBarHeight());

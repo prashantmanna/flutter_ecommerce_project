@@ -12,7 +12,7 @@ class SText{
   static const String onBoardingSubTitle3 = "From Our Doorstep to Yours - Swift,Secure and Contactless Delivery!";
 
   static const String homeAppbarTitle = "Good day for shopping";
-  static const String homeAppbarSubTitle = "Prashant Manna";
+  static const String homeAppbarSubTitle = "Prashant Dilip Manna";
 
 
 
