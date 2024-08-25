@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/features/authentication/screens/password_config/forget_password.dart';
 import 'package:flutter_ecommerce_project/features/authentication/screens/signup/signup.dart';
-import 'package:flutter_ecommerce_project/features/shop/screens/home/home.dart';
 import 'package:flutter_ecommerce_project/navigation_menu.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-
 import '../../utils/constants/sizes.dart';
 class AppForm extends StatelessWidget {
   const AppForm({
@@ -61,7 +59,7 @@ class AppForm extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                   onPressed: () {
-                    Get.to(()=> const NavigationMenu());
+                    Get.offAll(()=> const NavigationMenu());
                   }, child: const Text("Sign In")),
             ),
             const SizedBox(

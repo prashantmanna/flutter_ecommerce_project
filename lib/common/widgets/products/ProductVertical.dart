@@ -35,7 +35,8 @@ class ProductVertical extends StatelessWidget {
                   bgColor: Scolors.secondaryColor.withOpacity(0.8),
                   padding: const EdgeInsets.symmetric(horizontal: SSizes.sm,
                       vertical: SSizes.xs),
-                  child: Text("25%",style: Theme.of(context).textTheme.labelLarge!.apply(color: Scolors.black),),
+                  child:
+                    Text("25%",style: Theme.of(context).textTheme.labelLarge!.apply(color: Scolors.black),),
                 )
               ],
             ),
