@@ -1,9 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/common/custom_shapes/CircularWIdget.dart';
 import 'package:flutter_ecommerce_project/features/shop/screens/home/widgets/HomeSlider.dart';
-import 'package:flutter_ecommerce_project/features/shop/screens/home/widgets/ProductVertical.dart';
 import 'package:flutter_ecommerce_project/utils/constants/colors.dart';
 import 'package:flutter_ecommerce_project/utils/constants/image_strings.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
@@ -68,6 +66,7 @@ class HomeScreen extends StatelessWidget {
                       SImages.banner3
                     ],
                   ),
+                  SizedBox(height: SSizes.spaceBtwSections,),
                   ProductVertical()
                 ],
               )

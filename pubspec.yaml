@@ -48,6 +48,11 @@ flutter:
     - assets/images/product_categories/
     - assets/images/app_screen/
     - assets/images/banner/
+    - assets/images/products/bag/
+    - assets/images/products/laptop/
+    - assets/images/products/mobile/
+    - assets/images/products/shoes/
+    - assets/images/products/watch/
 
   fonts:
     - family: Poppins

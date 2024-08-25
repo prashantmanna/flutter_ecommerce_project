@@ -21,6 +21,9 @@ class Scolors{
   static const Color lightContainer = Color(0xfff6f6f6);
   static Color darkContainer = Scolors.white.withOpacity(0.1);
 
+  //border colors
+  static const Color borderPrimary = Color(0xffD9D9D9);
+  static const Color borderSecondary = Color(0xffE6E6E6);
   //button colors
   static const Color btnPrimary = Color(0xffD9D9D9);
   static const Color btnSecondary = Color(0xffe6e6e6);
