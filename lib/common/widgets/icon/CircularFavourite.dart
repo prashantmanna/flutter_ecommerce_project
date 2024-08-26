@@ -32,7 +32,7 @@ class CircularFavourite extends StatelessWidget {
         color: bgColor != null?bgColor!:(SHelperFunctions.isDarkMode(context)
                 ? Colors.black.withOpacity(0.9)
                 : Colors.white.withOpacity(0.9)),
-        borderRadius: BorderRadius.circular(100)
+        borderRadius: BorderRadius.circular(0)
       ),
       child: IconButton(
         onPressed: () {},

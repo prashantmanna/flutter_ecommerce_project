@@ -23,7 +23,6 @@ class ProductVertical extends StatelessWidget {
       padding: const EdgeInsets.all(1),
       decoration: BoxDecoration(
           boxShadow: [SShadowStyle.verticalProductShadow],
-          borderRadius: BorderRadius.circular(SSizes.productImageRadius),
           color: dark ? Scolors.darkGrey : Scolors.white),
       child: Column(
         children: [
@@ -42,7 +41,8 @@ class ProductVertical extends StatelessWidget {
 
                 //sale tage
                 Positioned(
-                  top: 12,
+                  top: 18,
+                  left: 0,
                   child: CircularWidget(
                     radius: SSizes.sm,
                     bgColor: Scolors.secondaryColor.withOpacity(0.8),
@@ -92,6 +92,25 @@ class ProductVertical extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
                       style: Theme.of(context).textTheme.labelMedium,
+                    ),
+                    const SizedBox(width: SSizes.xs,),
+                    const Icon(Iconsax.verify5,size: SSizes.iconXs,color: Scolors.primaryColor,)
+                  ],
+                ),
+                Row(
+                  children: [
+                    Text("\$35.5",
+                    style: Theme.of(context).textTheme.headlineMedium,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Scolors.dark,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(SSizes.cardRadiusMd),
+                          bottomRight: Radius.circular(SSizes.productImageRadius),
+                        ),),
+                      child: Icon(Iconsax.add,color: Scolors.white,),
                     )
                   ],
                 )
