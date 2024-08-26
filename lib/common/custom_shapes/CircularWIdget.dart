@@ -5,8 +5,8 @@ import '../../utils/constants/colors.dart';
 
 class CircularWidget extends StatelessWidget {
   const CircularWidget({
-    super.key, this.width = 400,
-    this.height = 400,
+    super.key, this.width,
+    this.height,
     this.radius = SSizes.cardRadiusLg,
     this.padding,
     this.bgColor = Scolors.white,

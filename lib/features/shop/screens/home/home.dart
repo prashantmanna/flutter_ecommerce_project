@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -56,7 +56,7 @@ class HomeScreen extends StatelessWidget {
               ],
             )),
             Padding(
-              padding: const EdgeInsets.all(SSizes.defaultSpace),
+              padding: EdgeInsets.all(SSizes.defaultSpace),
               child: Column(
                 children: [
                   HomeSlider(
