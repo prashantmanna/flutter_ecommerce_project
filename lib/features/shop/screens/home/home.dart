@@ -10,6 +10,7 @@ import '../../../../common/custom_shapes/PrimaryHeaderContainer.dart';
 import '../../../../common/custom_shapes/container/mySearchBar.dart';
 import '../../../../common/widgets/Homecategory/HomeCategory.dart';
 import '../../../../common/widgets/banner/RoundedBanner.dart';
+import '../../../../common/widgets/product_text/Sectionheading.dart';
 import '../../../../common/widgets/products/ProductVertical.dart';
 import '../../../../common/widgets/text/SectionHeading.dart';
 import 'widgets/home_appbar.dart';
@@ -68,6 +69,8 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: SSizes.spaceBtwItems,),
+                  const Sectionheading(title:"Popular Products"),
+                  SizedBox(height: SSizes.spaceBtwSections,),
                   //popular products
                   SGridLayout(itemCount: 4,
                       itemBuilder: (_,index) => const ProductVertical())
