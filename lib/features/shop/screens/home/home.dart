@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/common/custom_shapes/CircularWIdget.dart';
+import 'package:flutter_ecommerce_project/common/layouts/SGridLayout.dart';
 import 'package:flutter_ecommerce_project/features/shop/screens/home/widgets/HomeSlider.dart';
 import 'package:flutter_ecommerce_project/utils/constants/colors.dart';
 import 'package:flutter_ecommerce_project/utils/constants/image_strings.dart';
@@ -18,11 +19,11 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            PrimaryHeaderContainer(
+            const PrimaryHeaderContainer(
                 child: Column(
               children: [
                 home_appbar(),
@@ -56,18 +57,20 @@ class HomeScreen extends StatelessWidget {
               ],
             )),
             Padding(
-              padding: EdgeInsets.all(SSizes.defaultSpace),
+              padding: const EdgeInsets.all(SSizes.defaultSpace),
               child: Column(
                 children: [
-                  HomeSlider(
+                  const HomeSlider(
                     banners: [
                       SImages.banner1,
                       SImages.banner2,
                       SImages.banner3
                     ],
                   ),
-                  SizedBox(height: SSizes.spaceBtwSections,),
-                  ProductVertical()
+                  const SizedBox(height: SSizes.spaceBtwItems,),
+                  //popular products
+                  SGridLayout(itemCount: 4,
+                      itemBuilder: (_,index) => const ProductVertical())
                 ],
               )
             ),
@@ -77,6 +80,8 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+
 
 
 
