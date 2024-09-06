@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_project/utils/helpers/helper_functions.dart';
 
 class Sectionheading extends StatelessWidget {
   const Sectionheading({super.key,
@@ -15,6 +17,7 @@ class Sectionheading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dark = SHelperFunctions.isDarkMode(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -25,7 +28,9 @@ class Sectionheading extends StatelessWidget {
           overflow: TextOverflow.ellipsis,
 
         ),
-        if(showActionButton) TextButton(onPressed: onPressed, child: Text(buttonTitle,))
+        if(showActionButton) TextButton(onPressed: onPressed, child: Text(buttonTitle,
+          style: dark ? Theme.of(context).textTheme.headlineSmall!.apply(color: Colors.lightBlueAccent) : Theme.of(context).textTheme.headlineSmall!.apply(color: CupertinoColors.systemBlue),
+        ))
       ],
     );
   }

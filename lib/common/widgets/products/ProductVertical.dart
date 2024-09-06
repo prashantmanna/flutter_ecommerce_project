@@ -24,8 +24,12 @@ class ProductVertical extends StatelessWidget {
         width: 180,
         padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
+            
             boxShadow: [SShadowStyle.verticalProductShadow],
-            color: dark ? Scolors.darkGrey : Scolors.white),
+            color: dark ? Scolors.darkGrey : Scolors.white,
+            borderRadius: BorderRadius.circular(SSizes.cardRadiusLg)
+        ),
+            
         child: Column(
           children: [
             //thumbnail
