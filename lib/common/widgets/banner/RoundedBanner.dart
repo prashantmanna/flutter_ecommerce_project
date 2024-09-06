@@ -16,7 +16,7 @@ class RoundedImage extends StatelessWidget {
     this.padding,
     this.isNetworkImage = false,
     this.onPressed,
-    this.radius = SSizes.md,
+    this.radius = SSizes.sm,
   });
 
   final double? width,height;
@@ -41,7 +41,7 @@ class RoundedImage extends StatelessWidget {
         width: width,
         height: height,
         decoration: BoxDecoration(
-          borderRadius:applyImageRadius ? BorderRadius.circular(radius) : BorderRadius.zero,
+          borderRadius:applyImageRadius ? BorderRadius.all(Radius.circular(radius)) : BorderRadius.zero,
           border: border,
           color: bgColor,
 

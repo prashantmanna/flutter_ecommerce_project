@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import 'package:flutter_ecommerce_project/utils/helpers/helper_functions.dart';
-import 'package:iconsax/iconsax.dart';
 
-import '../../../utils/constants/colors.dart';
 
 class CircularFavourite extends StatelessWidget {
   const CircularFavourite(
@@ -14,6 +12,7 @@ class CircularFavourite extends StatelessWidget {
       this.size = SSizes.lg,
       required this.icon,
       this.onPressed,
+
       this.bgColor});
 
   final double? width;
@@ -30,9 +29,9 @@ class CircularFavourite extends StatelessWidget {
       height: height,
       decoration: BoxDecoration(
         color: bgColor != null?bgColor!:(SHelperFunctions.isDarkMode(context)
-                ? Colors.black.withOpacity(0.9)
+                ? Colors.white.withOpacity(0.9)
                 : Colors.white.withOpacity(0.9)),
-        borderRadius: BorderRadius.circular(0)
+        borderRadius: BorderRadius.circular(SSizes.sm)
       ),
       child: IconButton(
         onPressed: () {},

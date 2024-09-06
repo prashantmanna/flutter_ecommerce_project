@@ -7,7 +7,6 @@ import 'package:flutter_ecommerce_project/utils/constants/image_strings.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import 'package:flutter_ecommerce_project/utils/helpers/helper_functions.dart';
 import 'package:iconsax/iconsax.dart';
-
 import '../PriceTextWidget.dart';
 import '../icon/CircularFavourite.dart';
 import '../product_text/ProductCustomText.dart';
@@ -67,8 +66,9 @@ class ProductVertical extends StatelessWidget {
                     top: 0,
                     right: 0,
                     child: CircularFavourite(
-                      icon: Iconsax.heart,
+                      icon: Iconsax.heart5,
                       color: Colors.red,
+
                     ),
                   ),
                 ],
