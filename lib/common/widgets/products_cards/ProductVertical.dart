@@ -61,7 +61,7 @@ class ProductVertical extends StatelessWidget {
 
             //details
 
-            const Padding(padding: EdgeInsets.only(left: SSizes.sm),
+            const Padding(padding: EdgeInsets.all(1),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
