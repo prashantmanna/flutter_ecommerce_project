@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_project/common/custom_shapes/CircularWIdget.dart';
 import 'package:flutter_ecommerce_project/common/custom_shapes/container/mySearchBar.dart';
+import 'package:flutter_ecommerce_project/common/images/SCircularWidget.dart';
+import 'package:flutter_ecommerce_project/common/title_text/BrandTitleText.dart';
+import 'package:flutter_ecommerce_project/common/title_text/BrandTitleWIthVerifiedIcon.dart';
 import 'package:flutter_ecommerce_project/common/widgets/appbar/CustomAppBar.dart';
+import 'package:flutter_ecommerce_project/common/widgets/banner/RoundedBanner.dart';
+import 'package:flutter_ecommerce_project/common/widgets/product_text/ProductCustomText.dart';
 import 'package:flutter_ecommerce_project/common/widgets/product_text/Sectionheading.dart';
 import 'package:flutter_ecommerce_project/common/widgets/products_cart/MyCartWidget.dart';
 import 'package:flutter_ecommerce_project/features/shop/screens/home/widgets/home_appbar.dart';
+import 'package:flutter_ecommerce_project/utils/constants/enums.dart';
+import 'package:flutter_ecommerce_project/utils/constants/image_strings.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import 'package:flutter_ecommerce_project/utils/helpers/helper_functions.dart';
 
@@ -40,6 +48,29 @@ class Store extends StatelessWidget {
                     const SizedBox(height: SSizes.spaceBtwSections,),
                     Sectionheading(title: "Featured Brands",showActionButton: true,onPressed: (){},),
                     const SizedBox(height: SSizes.spaceBtwItems,),
+                    const CircularWidget(
+                      padding: EdgeInsets.all(SSizes.sm),
+                      showBorder: true,
+                      bgColor: Colors.transparent,
+                      child: Row(
+                        children: [
+                          ///icon
+                          SCircularWidget(
+                            isNetworkImage: false,
+                            url: SImages.laptop1,
+                            bgColor: Colors.transparent,
+                            //overlayColor: SHelperFunctions.isDarkMode(context)?Colors.white:Colors.black,
+                          ),
+                          SizedBox(width: SSizes.spaceBtwItems/2,),
+
+                          Column(
+                            children: [
+                             BrandTitleWithVerifiedIcon(title: "ASUS",brandTextSize: TextSizes.large,)
+                            ],
+                          )
+                        ],
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -51,3 +82,5 @@ class Store extends StatelessWidget {
     );
   }
 }
+
+

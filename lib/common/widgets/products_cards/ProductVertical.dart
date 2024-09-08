@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/common/custom_shapes/CircularWIdget.dart';
 import 'package:flutter_ecommerce_project/common/styles/SShadowStyle.dart';
+import 'package:flutter_ecommerce_project/common/title_text/BrandTitleWIthVerifiedIcon.dart';
 import 'package:flutter_ecommerce_project/common/title_text/product_price_text.dart';
 import 'package:flutter_ecommerce_project/common/widgets/banner/RoundedBanner.dart';
 import 'package:flutter_ecommerce_project/utils/constants/colors.dart';
@@ -60,30 +61,24 @@ class ProductVertical extends StatelessWidget {
 
             //details
 
-            Padding(padding: const EdgeInsets.only(left: SSizes.sm),
+            const Padding(padding: EdgeInsets.only(left: SSizes.sm),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const product_title_text(title: "Green Nike Air Shoes",smallSize: true,),
-                const SizedBox(height: SSizes.spaceBtwItems/2,),
-                Row(
-                  children: [
-                    Text("Nike",overflow: TextOverflow.ellipsis,maxLines: 1,style: Theme.of(context).textTheme.labelLarge!.apply(color: Scolors.black)),
-                    const SizedBox(width: SSizes.sm,),
-                    const Icon(Iconsax.verify5,color: Scolors.primaryColor,size: SSizes.md,)
-                  ],
-                ),
-
+                product_title_text(title: "Green Nike Air Shoes",smallSize: true,),
+                SizedBox(height: SSizes.spaceBtwItems/2,),
+                BrandTitleWithVerifiedIcon(title: "Nike")
 
               ],
             ),
             ),
-            Spacer(),
+            const Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: SSizes.sm),
+                const Padding(
+                  padding: EdgeInsets.only(left: SSizes.sm),
                   child: product_price_text(price: "35.5"),
                 ),
                 Container(
@@ -107,6 +102,7 @@ class ProductVertical extends StatelessWidget {
     );
   }
 }
+
 
 
 
