@@ -74,28 +74,33 @@ class ProductVertical extends StatelessWidget {
                   ],
                 ),
 
-                //Spacer(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    product_price_text(price: "35.5"),
-                    Container(
-                      decoration: const BoxDecoration(
-                        color: Scolors.dark,
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(SSizes.cardRadiusMd),
-                          bottomRight: Radius.circular(SSizes.productImageRadius)
-                        ),
-                      ),
-                      child: const SizedBox(
-                          width: SSizes.iconLg*1.2,
-                          height: SSizes.iconLg*1.2,
-                          child: Center(child: Icon(Iconsax.add,color: Scolors.white,))),
-                    )
-                  ],
+
+              ],
+            ),
+            ),
+            Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: SSizes.sm),
+                  child: product_price_text(price: "35.5"),
+                ),
+                Container(
+                  decoration: const BoxDecoration(
+                    color: Scolors.dark,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(SSizes.cardRadiusMd),
+                        bottomRight: Radius.circular(SSizes.productImageRadius)
+                    ),
+                  ),
+                  child: const SizedBox(
+                      width: SSizes.iconLg*1.2,
+                      height: SSizes.iconLg*1.2,
+                      child: Center(child: Icon(Iconsax.add,color: Scolors.white,))),
                 )
               ],
-            ),)
+            )
           ],
         ),
       ),
