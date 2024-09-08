@@ -1,6 +1,4 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_project/common/custom_shapes/CircularWIdget.dart';
 import 'package:flutter_ecommerce_project/common/layouts/SGridLayout.dart';
 import 'package:flutter_ecommerce_project/features/shop/screens/home/widgets/HomeSlider.dart';
 import 'package:flutter_ecommerce_project/utils/constants/colors.dart';
@@ -9,9 +7,8 @@ import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import '../../../../common/custom_shapes/PrimaryHeaderContainer.dart';
 import '../../../../common/custom_shapes/container/mySearchBar.dart';
 import '../../../../common/widgets/Homecategory/HomeCategory.dart';
-import '../../../../common/widgets/banner/RoundedBanner.dart';
 import '../../../../common/widgets/product_text/Sectionheading.dart';
-import '../../../../common/widgets/products/ProductVertical.dart';
+import '../../../../common/widgets/products_cards/ProductVertical.dart';
 import '../../../../common/widgets/text/SectionHeading.dart';
 import 'widgets/home_appbar.dart';
 
@@ -70,7 +67,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: SSizes.spaceBtwItems,),
                   const Sectionheading(title:"Popular Products"),
-                  SizedBox(height: SSizes.spaceBtwSections,),
+                  const SizedBox(height: SSizes.spaceBtwSections,),
                   //popular products
                   SGridLayout(itemCount: 4,
                       itemBuilder: (_,index) => const ProductVertical())

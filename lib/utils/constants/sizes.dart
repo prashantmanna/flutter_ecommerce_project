@@ -49,7 +49,7 @@ class SSizes{
 
   //product item dimension
   static const double productImageSize = 120.0;
-  static const double productImageRadius = 120.0;
+  static const double productImageRadius = 16.0;
   static const double productItemHeight = 120.0;
 
   //input field
