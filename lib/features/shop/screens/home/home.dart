@@ -69,7 +69,7 @@ class HomeScreen extends StatelessWidget {
                   const Sectionheading(title:"Popular Products"),
                   const SizedBox(height: SSizes.spaceBtwSections,),
                   //popular products
-                  SGridLayout(itemCount: 4,
+                  SGridLayout(itemCount: 4,mainAxisExtent: 275,
                       itemBuilder: (_,index) => const ProductVertical())
                 ],
               )
