@@ -4,7 +4,8 @@ import 'package:flutter_ecommerce_project/utils/device/device_utility.dart';
 import 'package:flutter_ecommerce_project/utils/helpers/helper_functions.dart';
 class Customtabbar extends StatelessWidget implements PreferredSizeWidget {
   const Customtabbar({
-    super.key, required this.tabs});
+    super.key,
+    required this.tabs});
 
   final List<Widget> tabs;
   @override
@@ -13,6 +14,7 @@ class Customtabbar extends StatelessWidget implements PreferredSizeWidget {
     return Material(
       color: dark ? Colors.black:Colors.white,
       child: TabBar(
+
         tabs: tabs,
         isScrollable: true,
         indicatorColor: Scolors.primaryColor,
@@ -23,6 +25,5 @@ class Customtabbar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  // TODO: implement preferredSize
-  Size get preferredSize => Size.fromHeight(SDeviceUtility.getAppBarHeight());
+  Size get preferredSize => Size.fromHeight(SDeviceUtility.getAppBarHeight()*1.5);
 }

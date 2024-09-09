@@ -40,10 +40,11 @@ class Store extends StatelessWidget {
                 automaticallyImplyLeading: false,
                 pinned: true,
                 floating: true,
+
                 backgroundColor: SHelperFunctions.isDarkMode(context)
                     ? Colors.black
                     : Colors.white,
-                expandedHeight: 440,
+                expandedHeight: 460,
                 flexibleSpace: Padding(
                   padding: const EdgeInsets.all(SSizes.defaultSpace),
                   child: ListView(
@@ -131,28 +132,23 @@ class Store extends StatelessWidget {
                     Tab(child: Text('Clothes'),),
                     Tab(child: Text('Cosmetics'),),
                     Tab(child: Text('Groceries'),),
-                    Tab(child: Text('Jewellery'),),
+
                   ],
                 ),
               )
             ];
           },
-          body: TabBarView(
-            children: [
-              Padding(padding: EdgeInsets.all(SSizes.defaultSpace),
-              child: Column(
-                children: [
-                  CircularWidget(
-                    showBorder: true,
-                    borderColor: Scolors.darkGrey,
-                    bgColor: Colors.transparent,
-                    margin: EdgeInsets.only(bottom: SSizes.spaceBtwItems),
-                    child: ,
-                  )
-                ],
-              ),)
-            ],
-          ),
+          body: CircularWidget(
+            showBorder: true,
+            borderColor: Scolors.darkGrey,
+            bgColor: Colors.transparent,
+            margin: EdgeInsets.only(bottom: SSizes.spaceBtwItems),
+            child: Column(
+              children: [
+
+              ],
+            ),
+          )
         ),
       ),
     );
