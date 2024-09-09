@@ -3,15 +3,11 @@ import 'package:flutter_ecommerce_project/common/custom_shapes/CircularWIdget.da
 import 'package:flutter_ecommerce_project/common/custom_shapes/container/mySearchBar.dart';
 import 'package:flutter_ecommerce_project/common/images/SCircularWidget.dart';
 import 'package:flutter_ecommerce_project/common/layouts/SGridLayout.dart';
-import 'package:flutter_ecommerce_project/common/title_text/BrandTitleText.dart';
 import 'package:flutter_ecommerce_project/common/title_text/BrandTitleWIthVerifiedIcon.dart';
 import 'package:flutter_ecommerce_project/common/widgets/appbar/CustomAppBar.dart';
 import 'package:flutter_ecommerce_project/common/widgets/appbar/CustomTabBar.dart';
-import 'package:flutter_ecommerce_project/common/widgets/banner/RoundedBanner.dart';
-import 'package:flutter_ecommerce_project/common/widgets/product_text/ProductCustomText.dart';
 import 'package:flutter_ecommerce_project/common/widgets/product_text/Sectionheading.dart';
 import 'package:flutter_ecommerce_project/common/widgets/products_cart/MyCartWidget.dart';
-import 'package:flutter_ecommerce_project/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:flutter_ecommerce_project/utils/constants/colors.dart';
 import 'package:flutter_ecommerce_project/utils/constants/enums.dart';
 import 'package:flutter_ecommerce_project/utils/constants/image_strings.dart';
