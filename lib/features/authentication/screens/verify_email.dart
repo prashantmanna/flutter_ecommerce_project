@@ -29,7 +29,7 @@ class VerifyEmail extends StatelessWidget {
             children: [
               Image(
                 image: const AssetImage(
-                    "assets/images/techny-mobile-bank-security-and-personal-finance-protection.png"),
+                    "assets/images/onboarding_photos/techny-user-profile-on-phone-screen.png"),
                 width: SHelperFunctions.screenWidth() * 0.8,
               ),
               const SizedBox(
@@ -64,7 +64,7 @@ class VerifyEmail extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {
                     Get.to(() => SuccessScreen(
-                      image: "assets/images/techny-user-profile-on-phone-screen.png",
+                      image: "assets/images/onboarding_photos/techny-user-profile-on-phone-screen.png",
                       title: "Your account created successfully",
                       subtitle: "Welcome to ultimate shopping destination.Your account is created.Unleash the joy of seamless online shopping",
                       callback: () => Get.to(() => Login()),

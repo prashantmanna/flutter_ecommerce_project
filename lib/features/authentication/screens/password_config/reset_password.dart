@@ -25,7 +25,7 @@ class ResetPassword extends StatelessWidget {
               Image(
                   width: SSizes.screenWidth*0.6,
                   image: const AssetImage(
-                      "assets/images/sammy-man-receives-a-mail.png")),
+                      "assets/images/onboarding_photos/sammy-man-receives-a-mail.png")),
               const SizedBox(
                 height: SSizes.spaceBtwItems,
               ),

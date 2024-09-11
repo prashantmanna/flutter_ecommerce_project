@@ -7,13 +7,15 @@ import 'package:flutter_ecommerce_project/common/title_text/BrandTitleWIthVerifi
 import 'package:flutter_ecommerce_project/common/widgets/appbar/CustomAppBar.dart';
 import 'package:flutter_ecommerce_project/common/widgets/appbar/CustomTabBar.dart';
 import 'package:flutter_ecommerce_project/common/widgets/product_text/Sectionheading.dart';
-import 'package:flutter_ecommerce_project/common/widgets/products_cart/BrandCard.dart';
+
 import 'package:flutter_ecommerce_project/common/widgets/products_cart/MyCartWidget.dart';
-import 'package:flutter_ecommerce_project/utils/constants/colors.dart';
+
 import 'package:flutter_ecommerce_project/utils/constants/enums.dart';
 import 'package:flutter_ecommerce_project/utils/constants/image_strings.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import 'package:flutter_ecommerce_project/utils/helpers/helper_functions.dart';
+
+import '../../../../../common/widgets/products_cards/SBrandProducts.dart';
 
 class Store extends StatelessWidget {
   const Store({super.key});
@@ -141,7 +143,13 @@ class Store extends StatelessWidget {
               Padding(padding: const EdgeInsets.all(SSizes.defaultSpace),
               child: Column(
                 children: [
-                  SBrandProducts(dark: dark)
+                  SBrandProducts(
+                    images: [
+                      SImages.watch1,
+                      SImages.watch2,
+                      SImages.watch3
+                    ],
+                  )
                 ],
               ),)
             ],
@@ -152,57 +160,3 @@ class Store extends StatelessWidget {
   }
 }
 
-class SBrandProducts extends StatelessWidget {
-  const SBrandProducts({
-    super.key,
-
-
-  });
-
-
-
-  @override
-  Widget build(BuildContext context) {
-    final dark = SHelperFunctions.isDarkMode(context);
-    return CircularWidget(
-      showBorder: true,
-      borderColor: Scolors.darkGrey,
-      bgColor: Colors.transparent,
-      //padding: EdgeInsets.all(SSizes.sm),
-      margin: const EdgeInsets.only(bottom: SSizes.spaceBtwItems),
-      child: Column(
-        children: [
-          const Brandcard(showBorder: false),
-          Row(
-            children: [
-              Expanded(
-                child: CircularWidget(
-                  height: 120,
-                  bgColor: dark?Scolors.dark:Scolors.light,
-                  margin: const EdgeInsets.only(bottom: SSizes.md),
-                  child: const Image(image: AssetImage(SImages.watch1),fit: BoxFit.cover,),
-                ),
-              ),
-              Expanded(
-                child: CircularWidget(
-                  height: 120,
-                  bgColor: dark?Scolors.dark:Scolors.light,
-                  margin: const EdgeInsets.only(bottom: SSizes.md),
-                  child: const Image(image: AssetImage(SImages.watch2),fit: BoxFit.cover,),
-                ),
-              ),
-              Expanded(
-                child: CircularWidget(
-                  height: 120,
-                  bgColor: dark?Scolors.dark:Scolors.light,
-                  margin: const EdgeInsets.only(bottom: SSizes.md),
-                  child: const Image(image: AssetImage(SImages.watch3),fit: BoxFit.cover,),
-                ),
-              )
-            ],
-          )
-        ],
-      ),
-    );
-  }
-}
