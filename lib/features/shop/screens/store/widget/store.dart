@@ -9,6 +9,7 @@ import 'package:flutter_ecommerce_project/common/widgets/appbar/CustomTabBar.dar
 import 'package:flutter_ecommerce_project/common/widgets/product_text/Sectionheading.dart';
 
 import 'package:flutter_ecommerce_project/common/widgets/products_cart/MyCartWidget.dart';
+import 'package:flutter_ecommerce_project/features/shop/screens/store/widget/category_tab.dart';
 
 import 'package:flutter_ecommerce_project/utils/constants/enums.dart';
 import 'package:flutter_ecommerce_project/utils/constants/image_strings.dart';
@@ -140,18 +141,13 @@ class Store extends StatelessWidget {
           },
           body: TabBarView(
             children: [
-              Padding(padding: const EdgeInsets.all(SSizes.defaultSpace),
-              child: Column(
-                children: [
-                  SBrandProducts(
-                    images: [
-                      SImages.watch1,
-                      SImages.watch2,
-                      SImages.watch3
-                    ],
-                  )
-                ],
-              ),)
+                CategoryTab(),
+                CategoryTab(),
+                CategoryTab(),
+                CategoryTab(),
+                CategoryTab(),
+                CategoryTab()
+
             ],
           )
         ),

@@ -22,8 +22,8 @@ class SBrandProducts extends StatelessWidget {
       showBorder: true,
       borderColor: Scolors.darkGrey,
       bgColor: Colors.transparent,
-      //padding: EdgeInsets.all(SSizes.sm),
-      margin: const EdgeInsets.only(bottom: SSizes.spaceBtwItems),
+      padding: EdgeInsets.all(0),
+      margin: const EdgeInsets.only(bottom: SSizes.sm),
       child: Column(
         children: [
           const Brandcard(showBorder: false),
@@ -39,12 +39,11 @@ class SBrandProducts extends StatelessWidget {
     return Expanded(
       child: CircularWidget(
         height: 100,
-        padding: const EdgeInsets.all(SSizes.sm),
-        margin: const EdgeInsets.only(right: SSizes.sm),
+        margin: EdgeInsets.only(bottom: SSizes.sm),
         bgColor: SHelperFunctions.isDarkMode(context)?Scolors.darkerGrey:Scolors.light,
-        child: const Image(
+        child: Image(
           fit: BoxFit.cover,
-          image: AssetImage(SImages.product2),
+          image: AssetImage(image),
         ),
       ),
     );
