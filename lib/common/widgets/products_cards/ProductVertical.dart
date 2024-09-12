@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_project/common/custom_shapes/CircularWIdget.dart';
+import 'package:flutter_ecommerce_project/common/custom_shapes/CircularWidget.dart';
 import 'package:flutter_ecommerce_project/common/styles/SShadowStyle.dart';
 import 'package:flutter_ecommerce_project/common/title_text/BrandTitleWIthVerifiedIcon.dart';
 import 'package:flutter_ecommerce_project/common/title_text/product_price_text.dart';
@@ -12,9 +12,6 @@ import 'package:iconsax/iconsax.dart';
 
 import '../../icons/CircularIcon.dart';
 import '../../title_text/product_title_text.dart';
-import '../PriceTextWidget.dart';
-import '../icon/CircularFavourite.dart';
-import '../product_text/ProductCustomText.dart';
 
 class ProductVertical extends StatelessWidget {
   const ProductVertical({super.key});

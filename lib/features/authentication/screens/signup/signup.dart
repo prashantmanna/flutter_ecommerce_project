@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/common/loginsignup/AppButtonSignIn.dart';
 import 'package:flutter_ecommerce_project/common/loginsignup/AppDivider.dart';
-import 'package:flutter_ecommerce_project/utils/constants/colors.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import 'package:flutter_ecommerce_project/utils/helpers/helper_functions.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 
 import '../../../../common/widgets/signup/SignUpForm.dart';
 

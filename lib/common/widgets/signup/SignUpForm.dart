@@ -122,7 +122,7 @@ class SignUpForm extends StatelessWidget {
           SizedBox(width: double.infinity,child:
           ElevatedButton(
             onPressed: (){
-              Get.to(VerifyEmail());
+              Get.to(const VerifyEmail());
             },
             child: const Text("Create Account"),
           ),)

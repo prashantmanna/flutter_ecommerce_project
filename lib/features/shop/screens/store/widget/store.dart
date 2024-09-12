@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_project/common/custom_shapes/CircularWIdget.dart';
+import 'package:flutter_ecommerce_project/common/custom_shapes/CircularWidget.dart';
 import 'package:flutter_ecommerce_project/common/custom_shapes/container/mySearchBar.dart';
 import 'package:flutter_ecommerce_project/common/images/SCircularWidget.dart';
 import 'package:flutter_ecommerce_project/common/layouts/SGridLayout.dart';
@@ -16,7 +16,6 @@ import 'package:flutter_ecommerce_project/utils/constants/image_strings.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import 'package:flutter_ecommerce_project/utils/helpers/helper_functions.dart';
 
-import '../../../../../common/widgets/products_cards/SBrandProducts.dart';
 
 class Store extends StatelessWidget {
   const Store({super.key});
@@ -139,7 +138,7 @@ class Store extends StatelessWidget {
               )
             ];
           },
-          body: TabBarView(
+          body: const TabBarView(
             children: [
                 CategoryTab(),
                 CategoryTab(),

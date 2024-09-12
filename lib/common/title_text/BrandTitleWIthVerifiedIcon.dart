@@ -3,7 +3,6 @@ import 'package:flutter_ecommerce_project/common/title_text/BrandTitleText.dart'
 import 'package:flutter_ecommerce_project/utils/constants/enums.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../utils/constants/colors.dart';
 import '../../utils/constants/sizes.dart';
 class BrandTitleWithVerifiedIcon extends StatelessWidget {
   const BrandTitleWithVerifiedIcon({

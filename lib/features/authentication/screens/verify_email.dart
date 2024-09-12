@@ -67,7 +67,7 @@ class VerifyEmail extends StatelessWidget {
                       image: "assets/images/onboarding_photos/techny-user-profile-on-phone-screen.png",
                       title: "Your account created successfully",
                       subtitle: "Welcome to ultimate shopping destination.Your account is created.Unleash the joy of seamless online shopping",
-                      callback: () => Get.to(() => Login()),
+                      callback: () => Get.to(() => const Login()),
                     ));
                   },
                   child: const Text("Continue"),

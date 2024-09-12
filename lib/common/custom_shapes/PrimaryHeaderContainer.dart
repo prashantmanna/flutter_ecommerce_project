@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../utils/constants/colors.dart';
-import 'CircularWIdget.dart';
+import 'CircularWidget.dart';
 import 'CurvedEdgeWidget.dart';
 
 class PrimaryHeaderContainer extends StatelessWidget {

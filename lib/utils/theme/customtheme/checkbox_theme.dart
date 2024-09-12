@@ -5,15 +5,15 @@ class SCheckBoxTheme{
 
   static CheckboxThemeData lightTheme = CheckboxThemeData(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-    checkColor: MaterialStateProperty.resolveWith((status){
-      if(status.contains(MaterialState.selected)){
+    checkColor: WidgetStateProperty.resolveWith((status){
+      if(status.contains(WidgetState.selected)){
         return Colors.white;
       }else{
         return Colors.black;
       }
     }),
-    fillColor: MaterialStateProperty.resolveWith((status){
-      if(status.contains(MaterialState.selected)){
+    fillColor: WidgetStateProperty.resolveWith((status){
+      if(status.contains(WidgetState.selected)){
         return Colors.blue;
       }else{
         return Colors.transparent;
@@ -23,15 +23,15 @@ class SCheckBoxTheme{
 
   static CheckboxThemeData darkTheme = CheckboxThemeData(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-      checkColor: MaterialStateProperty.resolveWith((status){
-        if(status.contains(MaterialState.selected)){
+      checkColor: WidgetStateProperty.resolveWith((status){
+        if(status.contains(WidgetState.selected)){
           return Colors.white;
         }else{
           return Colors.black;
         }
       }),
-      fillColor: MaterialStateProperty.resolveWith((status){
-        if(status.contains(MaterialState.selected)){
+      fillColor: WidgetStateProperty.resolveWith((status){
+        if(status.contains(WidgetState.selected)){
           return Colors.blue;
         }else{
           return Colors.transparent;

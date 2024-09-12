@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_project/common/custom_shapes/CircularWIdget.dart';
-import 'package:flutter_ecommerce_project/common/icons/CircularIcon.dart';
+import 'package:flutter_ecommerce_project/common/custom_shapes/CircularWidget.dart';
 import 'package:flutter_ecommerce_project/common/images/SCircularWidget.dart';
 import 'package:flutter_ecommerce_project/common/title_text/BrandTitleText.dart';
 import 'package:flutter_ecommerce_project/common/title_text/BrandTitleWIthVerifiedIcon.dart';
-import 'package:flutter_ecommerce_project/common/widgets/banner/RoundedBanner.dart';
-import 'package:flutter_ecommerce_project/utils/constants/colors.dart';
 import 'package:flutter_ecommerce_project/utils/constants/image_strings.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import 'package:flutter_ecommerce_project/utils/helpers/helper_functions.dart';
@@ -26,7 +23,7 @@ class Brandcard extends StatelessWidget {
         showBorder: showBorder,
         bgColor: Colors.transparent,
         padding: const EdgeInsets.all(SSizes.sm),
-        child: Row(
+        child: const Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Flexible(

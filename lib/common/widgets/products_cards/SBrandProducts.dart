@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../../utils/constants/colors.dart';
-import '../../../utils/constants/image_strings.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/helpers/helper_functions.dart';
-import '../../custom_shapes/CircularWIdget.dart';
+import '../../custom_shapes/CircularWidget.dart';
 import '../products_cart/BrandCard.dart';
 class SBrandProducts extends StatelessWidget {
   const SBrandProducts({
@@ -22,7 +21,7 @@ class SBrandProducts extends StatelessWidget {
       showBorder: true,
       borderColor: Scolors.darkGrey,
       bgColor: Colors.transparent,
-      padding: EdgeInsets.all(0),
+      padding: const EdgeInsets.all(0),
       margin: const EdgeInsets.only(bottom: SSizes.sm),
       child: Column(
         children: [
@@ -39,7 +38,7 @@ class SBrandProducts extends StatelessWidget {
     return Expanded(
       child: CircularWidget(
         height: 100,
-        margin: EdgeInsets.only(bottom: SSizes.sm),
+        margin: const EdgeInsets.only(bottom: SSizes.sm),
         bgColor: SHelperFunctions.isDarkMode(context)?Scolors.darkerGrey:Scolors.light,
         child: Image(
           fit: BoxFit.cover,

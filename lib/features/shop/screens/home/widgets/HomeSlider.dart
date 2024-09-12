@@ -5,7 +5,7 @@ import 'package:flutter_ecommerce_project/features/shop/screens/home/home_contro
 import 'package:flutter_ecommerce_project/utils/constants/colors.dart';
 import 'package:get/get.dart';
 
-import '../../../../../common/custom_shapes/CircularWIdget.dart';
+import '../../../../../common/custom_shapes/CircularWidget.dart';
 import '../../../../../common/widgets/banner/RoundedBanner.dart';
 import '../../../../../utils/constants/sizes.dart';
 

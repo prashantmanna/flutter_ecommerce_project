@@ -26,7 +26,7 @@ class onboardingButton extends StatelessWidget {
               shape: const CircleBorder(),
               backgroundColor: dark ? Scolors.primaryColor:Scolors.dark
           ),
-          child: Icon(Iconsax.arrow_right_3),
+          child: const Icon(Iconsax.arrow_right_3),
         ));
   }
 }

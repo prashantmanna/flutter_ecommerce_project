@@ -48,7 +48,7 @@ class AppForm extends StatelessWidget {
                 ),
                 TextButton(
                     onPressed: () {
-                      Get.to(() => ForgetPassword());
+                      Get.to(() => const ForgetPassword());
                     }, child: const Text("Forget Password"))
               ],
             ),

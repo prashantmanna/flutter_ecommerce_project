@@ -49,7 +49,7 @@ class ResetPassword extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () => {
-                    Get.to(() => Login())
+                    Get.to(() => const Login())
                   },
                   child: const Text(
                     "DONE",
