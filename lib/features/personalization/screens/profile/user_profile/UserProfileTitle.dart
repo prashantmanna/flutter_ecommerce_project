@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_project/utils/constants/image_strings.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../../common/icons/CircularIcon.dart';
 class UserProfileTitle extends StatelessWidget {
   const UserProfileTitle({
     super.key,
-    this.onPressed
+    this.onPressed,
+    this.icon
   });
 
   final VoidCallback? onPressed;
+  final IconData? icon;
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: const SCircularIcon(
-        icon: Iconsax.profile_circle,
+      leading:  SCircularIcon(
+        icon: ,
         width: 50,
         height: 50,
 
