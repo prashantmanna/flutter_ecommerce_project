@@ -39,10 +39,11 @@ class SBrandProducts extends StatelessWidget {
       child: CircularWidget(
         height: 100,
         margin: const EdgeInsets.only(bottom: SSizes.sm),
-        bgColor: SHelperFunctions.isDarkMode(context)?Scolors.darkerGrey:Scolors.light,
+        //bgColor: SHelperFunctions.isDarkMode(context)?Scolors.darkerGrey:Scolors.light,
         child: Image(
           fit: BoxFit.cover,
           image: AssetImage(image),
+
         ),
       ),
     );

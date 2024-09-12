@@ -54,4 +54,7 @@ class SImages{
   static  const String watch2 = "assets/images/products/watch/watch2.jpg";
   static  const String watch3 = "assets/images/products/watch/watch3.jpg";
 
+
+  //profile
+  static const String profile = "assets/images/onboarding_photos/userperson.png";
 }

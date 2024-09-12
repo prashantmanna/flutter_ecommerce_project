@@ -18,7 +18,9 @@ class Wishlist extends StatelessWidget {
         title: Text("Wishlist",style: Theme.of(context).textTheme.headlineMedium,),
 
         actions: [
-          SCircularIcon(icon: Iconsax.add,onPressed: ()=> Get.off(const HomeScreen()),)
+          SCircularIcon(icon: Iconsax.add,
+            bgColor: Colors.transparent,
+            onPressed: ()=> Get.off(const HomeScreen()),)
         ],
       ),
       body: SingleChildScrollView(

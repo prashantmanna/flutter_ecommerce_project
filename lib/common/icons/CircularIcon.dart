@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import 'package:flutter_ecommerce_project/utils/helpers/helper_functions.dart';
-import 'package:iconsax/iconsax.dart';
 
-import '../../utils/constants/colors.dart';
 
 class SCircularIcon extends StatelessWidget {
   const SCircularIcon({
@@ -28,7 +26,7 @@ class SCircularIcon extends StatelessWidget {
 
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(100),
-        color: SHelperFunctions.isDarkMode(context)?Scolors.white:Scolors.white,
+        color: SHelperFunctions.isDarkMode(context)?Colors.transparent:Colors.transparent,
 
       ),
       child: IconButton(
