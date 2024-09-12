@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/common/images/SCircularWidget.dart';
 import 'package:flutter_ecommerce_project/common/widgets/appbar/CustomAppBar.dart';
 import 'package:flutter_ecommerce_project/common/widgets/product_text/Sectionheading.dart';
+import 'package:flutter_ecommerce_project/features/personalization/screens/profile/ProfileSettings.dart';
 import 'package:flutter_ecommerce_project/features/personalization/screens/profile/user_profile/ProfileInfo.dart';
 import 'package:flutter_ecommerce_project/utils/constants/image_strings.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -13,7 +15,6 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppbar(
-
         showBackArrow: true,
         title: Text("Profile",),
 
@@ -21,7 +22,6 @@ class ProfileScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(padding: const EdgeInsets.all(SSizes.defaultSpace),
         child: Column(
-
           children: [
            SizedBox(
            width: double.infinity,
@@ -53,13 +53,12 @@ class ProfileScreen extends StatelessWidget {
             Center(
               child:
               TextButton(
-                onPressed: (){},
+                onPressed: ()=> Get.to(const ProfileSettings()),
                 child: const Text(
                   "Close Account",style: TextStyle(color: Colors.red),
                 ),
               ),
             )
-
           ],
         ),),
 
