@@ -26,7 +26,7 @@ class HomeSlider extends StatelessWidget {
               viewportFraction: 1,
               onPageChanged: (index, _) =>
                   controller.updatePageIndicator(index)),
-          items: banners.map((url) => RoundedImage(imageUrl: url,fit: BoxFit.cover,)).toList()
+          items: banners.map((url) => RoundedBanner(imageUrl: url,fit: BoxFit.cover,)).toList()
         ),
         const SizedBox(
           height: SSizes.spaceBtwItems,

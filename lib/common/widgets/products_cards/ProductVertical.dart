@@ -22,7 +22,7 @@ class ProductVertical extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = SHelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: ()=> Get.to(ProductDetails()),
+      onTap: ()=> Get.to(const ProductDetails()),
       child: Container(
         width: 180,
 
@@ -42,7 +42,7 @@ class ProductVertical extends StatelessWidget {
               bgColor: dark ? Scolors.dark:Scolors.light,
               child: Stack(
                 children: [
-                  const RoundedImage(imageUrl: SImages.shoes1,fit: BoxFit.contain,applyImageRadius: true,),
+                  const RoundedBanner(imageUrl: SImages.shoes1,fit: BoxFit.contain,applyImageRadius: true,),
                   Positioned(
                     top: 10,
                     child: CircularWidget(radius: SSizes.sm,bgColor: Scolors.secondaryColor.withOpacity(0.8),

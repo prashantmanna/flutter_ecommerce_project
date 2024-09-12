@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_project/common/custom_shapes/CircularWidget.dart';
+import 'package:flutter_ecommerce_project/common/widgets/banner/RoundedBanner.dart';
 import 'package:flutter_ecommerce_project/utils/constants/colors.dart';
 import 'package:flutter_ecommerce_project/utils/constants/image_strings.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
@@ -19,18 +21,22 @@ class ProductDetails extends StatelessWidget {
             CurvedEdgeWidget(
               child: Container(
                 color: dark ? Scolors.darkGrey : Scolors.light,
-                child: Stack(
+                child: const Stack(
 
                   children: [
                     SizedBox(
                         height: 400,
                         width: double.infinity,
                         child: Padding(
-                          padding: const EdgeInsets.only(top: SSizes.defaultSpace),
+                          padding: EdgeInsets.only(top: SSizes.defaultSpace),
                           child: Center(
                               child: Image(image: AssetImage(SImages.mobile3),fit: BoxFit.cover,)),
+                              
                         ),
                     ),
+                    CircularWidget(
+
+                    )
                   ],
                 ),
               ),

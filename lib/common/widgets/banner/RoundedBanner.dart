@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../utils/constants/sizes.dart';
 
-class RoundedImage extends StatelessWidget {
-  const RoundedImage({
+class RoundedBanner extends StatelessWidget {
+  const RoundedBanner({
     super.key,
     this.width,
     this.height,
