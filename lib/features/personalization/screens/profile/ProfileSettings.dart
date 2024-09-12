@@ -28,7 +28,7 @@ class ProfileSettings extends StatelessWidget {
 
                   ),
                   ///user profileList
-                  UserProfileTitle(onPressed: ()=>Get.to(ProfileScreen()),),
+                  UserProfileTitle(onPressed: ()=>Get.to(const ProfileScreen()),),
                   const SizedBox(height: SSizes.spaceBtwItems,),
                 ],
               ),
@@ -63,7 +63,7 @@ class ProfileSettings extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: OutlinedButton(
-                    onPressed: ()=>Get.to(Login()),
+                    onPressed: ()=>Get.to(const Login()),
                     child: const Text("Logout"),
                   ),
                 )

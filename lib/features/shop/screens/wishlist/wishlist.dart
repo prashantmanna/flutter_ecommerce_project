@@ -4,7 +4,6 @@ import 'package:flutter_ecommerce_project/common/layouts/SGridLayout.dart';
 import 'package:flutter_ecommerce_project/common/widgets/appbar/CustomAppBar.dart';
 import 'package:flutter_ecommerce_project/common/widgets/products_cards/ProductVertical.dart';
 import 'package:flutter_ecommerce_project/features/shop/screens/home/home.dart';
-import 'package:flutter_ecommerce_project/navigation_menu.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -21,7 +20,7 @@ class Wishlist extends StatelessWidget {
         actions: [
           SCircularIcon(icon: Iconsax.add,
             bgColor: Colors.transparent,
-            onPressed: ()=> Get.to(HomeScreen()),)
+            onPressed: ()=> Get.to(const HomeScreen()),)
         ],
       ),
       body: SingleChildScrollView(
