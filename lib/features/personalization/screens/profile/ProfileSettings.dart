@@ -6,6 +6,7 @@ import 'package:flutter_ecommerce_project/features/authentication/screens/login/
 import 'package:flutter_ecommerce_project/features/personalization/screens/profile/user_profile/ProfileScreen.dart';
 import 'package:flutter_ecommerce_project/features/personalization/screens/profile/user_profile/UserProfileTitle.dart';
 import 'package:flutter_ecommerce_project/features/personalization/screens/profile/user_profile/settings_menu.dart';
+import 'package:flutter_ecommerce_project/navigation_menu.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -16,6 +17,7 @@ class ProfileSettings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+
       body: SingleChildScrollView(
         child: Column(
           children: [

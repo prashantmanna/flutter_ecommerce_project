@@ -19,6 +19,7 @@ class NavigationMenu extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: Obx(
           () => NavigationBar(
+
             elevation: 0,
             height: 80,
             selectedIndex: controller.selectedIndex.value,

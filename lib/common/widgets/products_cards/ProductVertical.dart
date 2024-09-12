@@ -4,10 +4,12 @@ import 'package:flutter_ecommerce_project/common/styles/SShadowStyle.dart';
 import 'package:flutter_ecommerce_project/common/title_text/BrandTitleWIthVerifiedIcon.dart';
 import 'package:flutter_ecommerce_project/common/title_text/product_price_text.dart';
 import 'package:flutter_ecommerce_project/common/widgets/banner/RoundedBanner.dart';
+import 'package:flutter_ecommerce_project/features/shop/screens/product_details/product_details.dart';
 import 'package:flutter_ecommerce_project/utils/constants/colors.dart';
 import 'package:flutter_ecommerce_project/utils/constants/image_strings.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import 'package:flutter_ecommerce_project/utils/helpers/helper_functions.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../icons/CircularIcon.dart';
@@ -20,7 +22,7 @@ class ProductVertical extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = SHelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: (){},
+      onTap: ()=> Get.to(ProductDetails()),
       child: Container(
         width: 180,
 
