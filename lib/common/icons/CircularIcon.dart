@@ -31,7 +31,7 @@ class SCircularIcon extends StatelessWidget {
       ),
       child: IconButton(
 
-        onPressed: (){},
+        onPressed: onPressed,
         icon: Icon(icon,size: size,color: color),
       ),
     );

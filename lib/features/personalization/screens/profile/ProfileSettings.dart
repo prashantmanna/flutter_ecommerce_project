@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/common/custom_shapes/PrimaryHeaderContainer.dart';
 import 'package:flutter_ecommerce_project/common/widgets/appbar/CustomAppBar.dart';
 import 'package:flutter_ecommerce_project/common/widgets/product_text/Sectionheading.dart';
+import 'package:flutter_ecommerce_project/features/personalization/screens/profile/user_profile/ProfileScreen.dart';
 import 'package:flutter_ecommerce_project/features/personalization/screens/profile/user_profile/UserProfileTitle.dart';
 import 'package:flutter_ecommerce_project/features/personalization/screens/profile/user_profile/settings_menu.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-class Profile extends StatelessWidget {
-  const Profile({super.key});
+class ProfileSettings extends StatelessWidget {
+  const ProfileSettings({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class Profile extends StatelessWidget {
 
                   ),
                   ///user profileList
-                  const UserProfileTitle(),
+                  UserProfileTitle(onPressed: ()=>Get.to(ProfileScreen()),),
                   const SizedBox(height: SSizes.spaceBtwItems,),
                 ],
               ),
