@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_project/common/widgets/products_cards/ProductAttributes.dart';
 import 'package:flutter_ecommerce_project/common/widgets/products_cards/ProductMetaData.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import 'package:flutter_ecommerce_project/utils/helpers/helper_functions.dart';
@@ -26,7 +27,10 @@ class ProductDetails extends StatelessWidget {
                 //rating 
                 RatingAndShare(),
                 //price
-                Productmetadata()
+                Productmetadata(),
+                SizedBox(height: SSizes.spaceBtwItems,),
+                //attributes
+                Productattributes()
               ],
             ),),
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/utils/theme/customtheme/app_bar.dart';
 import 'package:flutter_ecommerce_project/utils/theme/customtheme/bottom_sheet.dart';
 import 'package:flutter_ecommerce_project/utils/theme/customtheme/checkbox_theme.dart';
+import 'package:flutter_ecommerce_project/utils/theme/customtheme/chip_theme.dart';
 import 'package:flutter_ecommerce_project/utils/theme/customtheme/elevatedButtonTheme.dart';
 import 'package:flutter_ecommerce_project/utils/theme/customtheme/outlinedButtonTheme.dart';
 import 'package:flutter_ecommerce_project/utils/theme/customtheme/text_fieldTheme.dart';
@@ -22,7 +23,9 @@ class SAppTheme {
       appBarTheme: SAppBar.lightAppBar,
       bottomSheetTheme: SBottomSheetTheme.lightTheme,
       outlinedButtonTheme: SOutlinedButtonTheme.lightTheme,
-      inputDecorationTheme: STextFieldTheme.lightTheme);
+      inputDecorationTheme: STextFieldTheme.lightTheme,
+      chipTheme: SChipTheme.lightTheme);
+
   static ThemeData darkTheme = ThemeData(
       useMaterial3: true,
       fontFamily: 'Poppins',
@@ -35,5 +38,6 @@ class SAppTheme {
       appBarTheme: SAppBar.darkAppBar,
       bottomSheetTheme: SBottomSheetTheme.darkTheme,
       checkboxTheme: SCheckBoxTheme.darkTheme,
-      inputDecorationTheme: STextFieldTheme.darkTheme);
+      inputDecorationTheme: STextFieldTheme.darkTheme,
+      chipTheme: SChipTheme.darkTheme);
 }

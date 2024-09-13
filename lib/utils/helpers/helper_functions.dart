@@ -6,8 +6,6 @@ class SHelperFunctions{
   static Color? getColor(String value){
     if(value == 'Green'){
       return Colors.green;
-    }else if(value == 'Green'){
-      return Colors.green;
     }else if(value == 'Red'){
       return Colors.red;
     }else if(value == 'Blue'){
@@ -26,7 +24,10 @@ class SHelperFunctions{
       return Colors.teal;
     }else if(value == 'Indigo'){
       return Colors.indigo;
-    }else{
+    }else if(value == 'Yellow'){
+      return Colors.yellow;
+    }
+    else{
       return null;
     }
   }

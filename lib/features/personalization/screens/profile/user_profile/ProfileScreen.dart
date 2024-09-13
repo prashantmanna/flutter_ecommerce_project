@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/common/images/SCircularWidget.dart';
 import 'package:flutter_ecommerce_project/common/widgets/appbar/CustomAppBar.dart';
@@ -27,8 +28,9 @@ class ProfileScreen extends StatelessWidget {
            width: double.infinity,
            child: Column(
              children: [
-    const SCircularWidget(url: SImages.profile,width: 80,height: 80,),
-    TextButton(onPressed: (){}, child: const Text("Change Profile Picture"))
+
+            const SCircularWidget(url: SImages.profile,width: 80,height: 80,),
+               TextButton(onPressed: (){}, child: const Text("Change Profile Picture"))
              ],
            ),
            ),

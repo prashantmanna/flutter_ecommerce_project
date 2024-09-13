@@ -48,7 +48,7 @@ class ProductImageSlider extends StatelessWidget {
                     width: 80,
                     fit: BoxFit.scaleDown,
                     bgColor: dark?Scolors.dark:Colors.white,
-                    imageUrl: SImages.mobile2,
+                    imageUrl: SImages.mobile3,
                     border: Border.all(color: Scolors.primaryColor),
                     padding: const EdgeInsets.all(SSizes.lg),
                   ),),
