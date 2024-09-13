@@ -84,26 +84,40 @@ class Productattributes extends StatelessWidget {
         const SizedBox(
           height: SSizes.spaceBtwItems,
         ),
-        const Column(
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Sectionheading(title: "Colors"),
-            SizedBox(
+            const Sectionheading(title: "Colors",showActionButton: false,),
+            const SizedBox(
               height: SSizes.spaceBtwItems / 2,
             ),
-            Choice_chip(text: "Blue", selected: true),
-            Choice_chip(text: "Green", selected: true),
-            Choice_chip(text: "Yellow", selected: true),
+            Wrap(
+              spacing: 8,
+              children: [
+                Choice_chip(text: "Yellow", selected: false,onSelected: (value) {},),
+                Choice_chip(text: "Pink", selected: true,onSelected: (value){},),
+                Choice_chip(text: "Blue", selected: false,onSelected: (value){},),
+
+              ],
+            )
           ],
         ),
-        const Column(
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Sectionheading(title: "Colors"),
-            SizedBox(
+            const Sectionheading(title: "Sizes",showActionButton: false,),
+            const SizedBox(
               height: SSizes.spaceBtwItems / 2,
             ),
-            Choice_chip(text: "Mia Khalifa", selected: true),
-            Choice_chip(text: "Mia Malkova", selected: true),
-            Choice_chip(text: "Mia Mia", selected: true),
+            Wrap(
+              spacing: 8,
+              children: [
+                Choice_chip(text: "6.7", selected: true,onSelected: (value){},),
+                Choice_chip(text: "7.5", selected: false,onSelected: (value){},),
+                Choice_chip(text: "6.1", selected: false,onSelected: (value){},),
+
+              ],
+            )
           ],
         )
       ],

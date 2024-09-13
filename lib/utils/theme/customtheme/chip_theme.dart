@@ -10,16 +10,16 @@ class SChipTheme{
     selectedColor: Scolors.primaryColor,
     padding: const EdgeInsets.symmetric(horizontal: 12.0,vertical: 12.0),
     checkmarkColor: Colors.white,
-      shape: const CircleBorder(),
+
 
   );
 
   static ChipThemeData darkTheme = const ChipThemeData(
       disabledColor: Colors.grey,
-      labelStyle: TextStyle(color: Colors.white),
+      labelStyle: TextStyle(color: Colors.black),
       selectedColor: Scolors.primaryColor,
       padding: EdgeInsets.symmetric(horizontal: 12.0,vertical: 12.0),
       checkmarkColor: Colors.white,
-      shape: CircleBorder()
+
   );
 }

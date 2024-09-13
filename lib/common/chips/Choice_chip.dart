@@ -17,16 +17,19 @@ class Choice_chip extends StatelessWidget {
   Widget build(BuildContext context) {
     final isColor = SHelperFunctions.getColor(text) != null;
     return ChoiceChip(
-      label: isColor? SizedBox():Text(''),
+      label: isColor? const SizedBox():Text(text),
       selected: selected,
       labelStyle: TextStyle(color: selected ?Colors.white:null),
       onSelected: onSelected,
-      labelPadding: const EdgeInsets.all(0),
-      shape: CircleBorder(),
-      padding: EdgeInsets.all(0),
-      selectedColor: Colors.green,
+      labelPadding: isColor ? const EdgeInsets.all(0) : null,
+      shape: isColor ? const CircleBorder() : null,
+      padding: isColor ? const EdgeInsets.all(0) : null,
+      selectedColor: Colors.blue,
       avatar: isColor ?
-      CircularWidget(width: 50,height: 50,bgColor: SHelperFunctions.getColor(text)!) : null
+      CircularWidget(width: 50,height: 50,
+          bgColor: SHelperFunctions.getColor(text)!) : null,
+      backgroundColor: isColor ? SHelperFunctions.getColor(text)! : null,
+
     );
   }
 }
