@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_project/common/custom_shapes/CircularWidget.dart';
-import 'package:flutter_ecommerce_project/utils/constants/colors.dart';
-import 'package:flutter_ecommerce_project/utils/constants/image_strings.dart';
+import 'package:flutter_ecommerce_project/common/widgets/products_cards/ProductMetaData.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import 'package:flutter_ecommerce_project/utils/helpers/helper_functions.dart';
 
-import '../../../../common/custom_shapes/CurvedEdgeWidget.dart';
+import '../../../../common/widgets/products_cards/ProductImageSlider.dart';
+import '../../../../common/widgets/products_cards/RatingAndShare.dart';
 
 class ProductDetails extends StatelessWidget {
   const ProductDetails({super.key});
@@ -13,36 +12,31 @@ class ProductDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = SHelperFunctions.isDarkMode(context);
-    return Scaffold(
+    return const Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            CurvedEdgeWidget(
-              child: Container(
-                color: dark ? Scolors.darkGrey : Scolors.light,
-                child: const Stack(
+            ProductImageSlider(),
 
-                  children: [
-                    SizedBox(
-                        height: 400,
-                        width: double.infinity,
-                        child: Padding(
-                          padding: EdgeInsets.only(top: SSizes.defaultSpace),
-                          child: Center(
-                              child: Image(image: AssetImage(SImages.mobile3),fit: BoxFit.cover,)),
-                              
-                        ),
-                    ),
-                    CircularWidget(
+            Padding(padding:EdgeInsets.only(right: SSizes.defaultSpace,
+            left: SSizes.defaultSpace,
+            bottom: SSizes.defaultSpace),
+            child: Column(
+              children: [
+                //rating 
+                RatingAndShare(),
+                //price
+                Productmetadata()
+              ],
+            ),),
 
-                    )
-                  ],
-                ),
-              ),
-            )
           ],
         ),
       ),
     );
   }
 }
+
+
+
+
