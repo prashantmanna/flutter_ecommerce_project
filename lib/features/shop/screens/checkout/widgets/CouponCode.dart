@@ -16,12 +16,12 @@ class CouponCode extends StatelessWidget {
     return CircularWidget(
       showBorder: true,
       bgColor: dark ? Scolors.dark : Colors.white,
-      padding: EdgeInsets.only(top: SSizes.sm,bottom: SSizes.sm,right: SSizes.sm,left: SSizes.md),
+      padding: const EdgeInsets.only(top: SSizes.sm,bottom: SSizes.sm,right: SSizes.sm,left: SSizes.md),
       child: Row(
         children: [
           Flexible(
             child: TextFormField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   hintText: "Have a promo code? Enter Here",
                   focusedBorder: InputBorder.none,
                   errorBorder: InputBorder.none,
@@ -39,7 +39,7 @@ class CouponCode extends StatelessWidget {
                       side: BorderSide(color: Scolors.grey.withOpacity(0.1))
                   ),
 
-                  child: Text("Apply")))
+                  child: const Text("Apply")))
         ],
       ),
     );

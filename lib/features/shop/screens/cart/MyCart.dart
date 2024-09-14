@@ -24,7 +24,7 @@ class MyCart extends StatelessWidget {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(SSizes.defaultSpace),
         child: ElevatedButton(
-          onPressed: ()=>Get.to(Checkout()),
+          onPressed: ()=>Get.to(const Checkout()),
           child: const Text("Checkout \$750.00"),
         ),
       ),
