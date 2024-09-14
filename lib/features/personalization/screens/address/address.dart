@@ -12,7 +12,7 @@ class Address extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: ()=>Get.to(()=> const AddNewAddress()),
+      floatingActionButton: FloatingActionButton(onPressed: ()=>Get.to( const AddNewAddress()),
       backgroundColor: Scolors.primaryColor,
       child: const Icon(Iconsax.add,color: Colors.white,),),
 
@@ -25,7 +25,8 @@ class Address extends StatelessWidget {
           padding: EdgeInsets.all(SSizes.defaultSpace),
           child: Column(
             children: [
-              SingleAddress(selectedAddress: true)
+              SingleAddress(selectedAddress: false),
+              SingleAddress(selectedAddress: true),
             ],
           ),
         ),

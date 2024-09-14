@@ -52,7 +52,7 @@ class ProductVertical extends StatelessWidget {
                   const Positioned(
                       top: 0,
                       right: 0,
-                      child: SCircularIcon(icon: Iconsax.heart5,color: Colors.redAccent,))
+                      child: SCircularIcon(icon: Iconsax.heart,color: Colors.redAccent,))
                 ],
               ),
             ),

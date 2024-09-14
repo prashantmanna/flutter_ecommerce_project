@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_project/features/shop/screens/cart/MyCart.dart';
+import 'package:get/get.dart';
 
 import '../../../../../common/widgets/appbar/CustomAppBar.dart';
 import '../../../../../common/widgets/products_cart/MyCartWidget.dart';
@@ -21,7 +23,7 @@ class home_appbar extends StatelessWidget {
       ),
       actions: [
         MyCartWidget(
-          onPressed: (){},
+          onPressed: ()=> Get.to(const MyCart()),
           iconColor: Scolors.white,
         )
       ],
