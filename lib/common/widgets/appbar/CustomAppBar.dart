@@ -11,17 +11,19 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
         this.showBackArrow = false,
         this.leadingIcon,
         this.actions,
-        this.leadingOnPressed});
+        this.leadingOnPressed,
+        this.toolbarHeight});
 
   final Widget? title;
   final bool showBackArrow;
   final IconData? leadingIcon;
   final List<Widget>? actions;
   final VoidCallback? leadingOnPressed;
-
+  final double? toolbarHeight;
   @override
   @override
   Widget build(BuildContext context) {
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: SSizes.md),
       child: AppBar(

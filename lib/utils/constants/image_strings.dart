@@ -59,4 +59,5 @@ class SImages{
   static const String profile = "assets/images/onboarding_photos/userperson.png";
   static const String man = "assets/images/onBoardingImages/man.png";
   static const String moto = "assets/images/banner/moto.png";
+  static const String prashant = "assets/images/onBoardingImages/prashantmanna.png";
 }
