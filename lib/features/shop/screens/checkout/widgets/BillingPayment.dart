@@ -14,7 +14,7 @@ class BillingPayment extends StatelessWidget {
             Text("\$750.0",style: Theme.of(context).textTheme.labelLarge,),
           ],
         ),
-        SizedBox(height: SSizes.spaceBtwItems/2,),
+        const SizedBox(height: SSizes.spaceBtwItems/2,),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -22,7 +22,7 @@ class BillingPayment extends StatelessWidget {
             Text("\$10.0",style: Theme.of(context).textTheme.labelLarge,),
           ],
         ),
-        SizedBox(height: SSizes.spaceBtwItems/2,),
+        const SizedBox(height: SSizes.spaceBtwItems/2,),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -30,7 +30,7 @@ class BillingPayment extends StatelessWidget {
             Text("\$10.0",style: Theme.of(context).textTheme.labelLarge,),
           ],
         ),
-        SizedBox(height: SSizes.spaceBtwItems/2,),
+        const SizedBox(height: SSizes.spaceBtwItems/2,),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

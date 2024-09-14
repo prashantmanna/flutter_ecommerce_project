@@ -32,7 +32,7 @@ class Checkout extends StatelessWidget {
               CircularWidget(
                 showBorder: true,
                 bgColor: dark ? Colors.black : Colors.white,
-                padding: EdgeInsets.all(SSizes.md),
+                padding: const EdgeInsets.all(SSizes.md),
                 child: const Column(
                   children: [
                     BillingPayment(),

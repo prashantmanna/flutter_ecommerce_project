@@ -13,7 +13,7 @@ class BillingAddress extends StatelessWidget {
     return Column(
       children: [
         Sectionheading(title: "Payment Method",showActionButton: true,buttonTitle: "Change",onPressed: (){},),
-        SizedBox(height: SSizes.spaceBtwItems/2,),
+        const SizedBox(height: SSizes.spaceBtwItems/2,),
         Row(
           children: [
             CircularWidget(
