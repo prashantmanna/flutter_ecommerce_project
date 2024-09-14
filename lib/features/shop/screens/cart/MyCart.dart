@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_project/common/title_text/BrandTitleWIthVerifiedIcon.dart';
-import 'package:flutter_ecommerce_project/common/title_text/product_title_text.dart';
+import 'package:flutter_ecommerce_project/common/title_text/product_price_text.dart';
 import 'package:flutter_ecommerce_project/common/widgets/appbar/CustomAppBar.dart';
-import 'package:flutter_ecommerce_project/common/widgets/banner/RoundedBanner.dart';
-import 'package:flutter_ecommerce_project/utils/constants/image_strings.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
+import 'package:flutter_ecommerce_project/utils/helpers/helper_functions.dart';
+
+import 'AddAndRemoveButton.dart';
+import 'CartItem.dart';
 class MyCart extends StatelessWidget {
   const MyCart({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final dark = SHelperFunctions.isDarkMode(context);
     return Scaffold(
       appBar: CustomAppbar(
         title: Text("Cart",style: Theme.of(context).textTheme.headlineSmall,),
@@ -20,25 +22,20 @@ class MyCart extends StatelessWidget {
           padding: const EdgeInsets.all(SSizes.defaultSpace),
           child: ListView.separated(
             shrinkWrap: true,
-            itemBuilder: (_,index)=>const Column(
+            itemBuilder: (_,index)=> const Column(
               children: [
+                CartItem(),
                 Row(
-                  children: [
-                    RoundedBanner(imageUrl: SImages.mobile3,
-                      width: 70,
-                      height: 70,
-                      padding: EdgeInsets.all(SSizes.sm),),
-                    SizedBox(width: SSizes.spaceBtwItems,),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                    Row(
                       children: [
-                        BrandTitleWithVerifiedIcon(title: "Motorola"),
-                        product_title_text(title: "Motorola G64 5G"),
-
+                        SizedBox(width: 80,),
+                        AddAndRemoveButton(),
                       ],
-                    )
-                  ],
-                )
+                    ),
+                      product_price_text(price: "750")
+                ])
               ],
             ),
             separatorBuilder: (_,__)=>const SizedBox(height: SSizes.spaceBtwSections,),
@@ -49,3 +46,4 @@ class MyCart extends StatelessWidget {
     );
   }
 }
+
