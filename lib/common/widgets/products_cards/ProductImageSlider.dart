@@ -57,7 +57,7 @@ class ProductImageSlider extends StatelessWidget {
             const CustomAppbar(
               showBackArrow: true,
               actions: [
-                SCircularIcon(icon: Iconsax.heart5,color: Colors.red,)
+                SCircularIcon(icon: Iconsax.heart,color: Colors.red,)
               ],
             )
 

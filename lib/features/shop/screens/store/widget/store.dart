@@ -9,12 +9,14 @@ import 'package:flutter_ecommerce_project/common/widgets/appbar/CustomTabBar.dar
 import 'package:flutter_ecommerce_project/common/widgets/product_text/Sectionheading.dart';
 
 import 'package:flutter_ecommerce_project/common/widgets/products_cart/MyCartWidget.dart';
+import 'package:flutter_ecommerce_project/features/shop/screens/cart/MyCart.dart';
 import 'package:flutter_ecommerce_project/features/shop/screens/store/widget/category_tab.dart';
 
 import 'package:flutter_ecommerce_project/utils/constants/enums.dart';
 import 'package:flutter_ecommerce_project/utils/constants/image_strings.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import 'package:flutter_ecommerce_project/utils/helpers/helper_functions.dart';
+import 'package:get/get.dart';
 
 
 class Store extends StatelessWidget {
@@ -31,7 +33,7 @@ class Store extends StatelessWidget {
             'Store',
             style: Theme.of(context).textTheme.headlineMedium,
           ),
-          actions: [MyCartWidget(onPressed: () {})],
+          actions: [MyCartWidget(onPressed: ()=> Get.to(const MyCart()))],
         ),
         body: NestedScrollView(
           headerSliverBuilder: (_, innerBoxIsScrolled) {
