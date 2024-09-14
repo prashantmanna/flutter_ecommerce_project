@@ -17,30 +17,35 @@ class MyCart extends StatelessWidget {
         title: Text("Cart",style: Theme.of(context).textTheme.headlineSmall,),
         showBackArrow: true,
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(SSizes.defaultSpace),
-          child: ListView.separated(
-            shrinkWrap: true,
-            itemBuilder: (_,index)=> const Column(
-              children: [
-                CartItem(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: Padding(
+        padding: const EdgeInsets.all(SSizes.defaultSpace),
+        child: ListView.separated(
+          shrinkWrap: true,
+          itemBuilder: (_,index)=> const Column(
+            children: [
+              CartItem(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                  Row(
                     children: [
-                    Row(
-                      children: [
-                        SizedBox(width: 80,),
-                        AddAndRemoveButton(),
-                      ],
-                    ),
-                      product_price_text(price: "750")
-                ])
-              ],
-            ),
-            separatorBuilder: (_,__)=>const SizedBox(height: SSizes.spaceBtwSections,),
-            itemCount: 4,
+                      SizedBox(width: 80,),
+                      AddAndRemoveButton(),
+                    ],
+                  ),
+                    product_price_text(price: "750")
+              ])
+            ],
           ),
+          separatorBuilder: (_,__)=>const SizedBox(height: SSizes.spaceBtwSections,),
+          itemCount: 10,
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.all(SSizes.defaultSpace),
+        child: ElevatedButton(
+          onPressed: (){},
+          child: Text("Checkout \$750.00"),
         ),
       ),
     );
