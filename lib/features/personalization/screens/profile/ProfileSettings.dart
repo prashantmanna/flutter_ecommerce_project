@@ -3,6 +3,7 @@ import 'package:flutter_ecommerce_project/common/custom_shapes/PrimaryHeaderCont
 import 'package:flutter_ecommerce_project/common/widgets/appbar/CustomAppBar.dart';
 import 'package:flutter_ecommerce_project/common/widgets/product_text/Sectionheading.dart';
 import 'package:flutter_ecommerce_project/features/authentication/screens/login/login.dart';
+import 'package:flutter_ecommerce_project/features/personalization/screens/address/address.dart';
 import 'package:flutter_ecommerce_project/features/personalization/screens/profile/user_profile/ProfileScreen.dart';
 import 'package:flutter_ecommerce_project/features/personalization/screens/profile/user_profile/UserProfileTitle.dart';
 import 'package:flutter_ecommerce_project/features/personalization/screens/profile/user_profile/settings_menu.dart';
@@ -39,7 +40,7 @@ class ProfileSettings extends StatelessWidget {
               children: [
                 const Sectionheading(title: "Account Settings",showActionButton: false,),
                 const SizedBox(height: SSizes.spaceBtwItems,),
-                SettingsMenu(icon: Iconsax.safe_home, title: "My Address", subtitle: "Set shopping delivery address",onTap: (){},),
+                SettingsMenu(icon: Iconsax.safe_home, title: "My Addresses", subtitle: "Set shopping delivery address",onTap: ()=>Get.to(const Address()),),
                 SettingsMenu(icon: Iconsax.shopping_cart, title: "My Cart", subtitle: "Add ,remove products and save to checkout",onTap: (){},),
                 SettingsMenu(icon: Iconsax.bag_tick, title: "My Orders", subtitle: "In-progress and completed orders",onTap: (){},),
                 SettingsMenu(icon: Iconsax.bank, title: "Bank Account", subtitle: "Withdraw balance to registered bank account",onTap: (){},),

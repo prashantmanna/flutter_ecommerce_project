@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_project/features/authentication/screens/verify_email.dart';
+import 'package:flutter_ecommerce_project/features/authentication/screens/signup/verify_email.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 

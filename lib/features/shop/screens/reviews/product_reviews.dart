@@ -27,7 +27,10 @@ class ProductReviews extends StatelessWidget {
             const SizedBox(height: SSizes.spaceBtwSections,),
 
             //user review list
-            const UserReviewCard()
+            const UserReviewCard(),
+            const UserReviewCard(),
+            const UserReviewCard(),
+            const UserReviewCard(),
           ],
         ),),
       ),
