@@ -16,20 +16,24 @@ class Choice_chip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isColor = SHelperFunctions.getColor(text) != null;
-    return ChoiceChip(
-      label: isColor? const SizedBox():Text(text),
-      selected: selected,
-      labelStyle: TextStyle(color: selected ?Colors.white:null),
-      onSelected: onSelected,
-      labelPadding: isColor ? const EdgeInsets.all(0) : null,
-      shape: isColor ? const CircleBorder() : null,
-      padding: isColor ? const EdgeInsets.all(0) : null,
-      selectedColor: Colors.blue,
-      avatar: isColor ?
-      CircularWidget(width: 50,height: 50,
-          bgColor: SHelperFunctions.getColor(text)!) : null,
-      backgroundColor: isColor ? SHelperFunctions.getColor(text)! : null,
-
+    final dark = SHelperFunctions.isDarkMode(context);
+    return Theme(
+      data: Theme.of(context).copyWith(canvasColor: Colors.transparent),
+      child: ChoiceChip(
+        label: isColor? const SizedBox():Text(text),
+        selected: selected,
+        labelStyle: TextStyle(color: selected ? dark ? Colors.white : Colors.black : null),
+        onSelected: onSelected,
+        labelPadding: isColor ? const EdgeInsets.all(0) : null,
+        shape: isColor ? const CircleBorder() : null,
+        padding: isColor ? const EdgeInsets.all(0) : null,
+        selectedColor: Colors.blue,
+        avatar: isColor ?
+        CircularWidget(width: 50,height: 50,
+            bgColor: SHelperFunctions.getColor(text)!) : null,
+        backgroundColor: isColor ? SHelperFunctions.getColor(text)! : null,
+      
+      ),
     );
   }
 }
