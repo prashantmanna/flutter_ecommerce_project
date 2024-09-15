@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/common/custom_shapes/CircularWidget.dart';
 import 'package:flutter_ecommerce_project/common/widgets/product_text/Sectionheading.dart';
 import 'package:flutter_ecommerce_project/utils/constants/colors.dart';
+import 'package:flutter_ecommerce_project/utils/constants/image_strings.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import 'package:flutter_ecommerce_project/utils/helpers/helper_functions.dart';
-class BillingAddress extends StatelessWidget {
-  const BillingAddress({super.key});
+class PaymentSection extends StatelessWidget {
+  const PaymentSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +18,13 @@ class BillingAddress extends StatelessWidget {
         Row(
           children: [
             CircularWidget(
-              width: 60,
-              height: 60,
+              width: 20,
+              height: 20,
               bgColor: dark ? Scolors.light : Scolors.white,
-            )
+              child: const Image(image: AssetImage(SImages.paypal),fit: BoxFit.contain,),
+            ),
+            const SizedBox(width: SSizes.spaceBtwItems/2,),
+            Text("Paypal",style: Theme.of(context).textTheme.bodyLarge,)
           ],
         )
       ],

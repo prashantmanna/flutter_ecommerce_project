@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/common/custom_shapes/CircularWidget.dart';
 import 'package:flutter_ecommerce_project/common/widgets/appbar/CustomAppBar.dart';
+import 'package:flutter_ecommerce_project/features/authentication/screens/signup/sucess_screen.dart';
 import 'package:flutter_ecommerce_project/features/shop/screens/cart/CartWidget.dart';
-import 'package:flutter_ecommerce_project/features/shop/screens/checkout/widgets/BillingAddress.dart';
-import 'package:flutter_ecommerce_project/features/shop/screens/checkout/widgets/BillingPayment.dart';
+import 'package:flutter_ecommerce_project/features/shop/screens/checkout/widgets/AmountSection.dart';
+import 'package:flutter_ecommerce_project/features/shop/screens/checkout/widgets/BillingAddressSection.dart';
 import 'package:flutter_ecommerce_project/features/shop/screens/checkout/widgets/CouponCode.dart';
+import 'package:flutter_ecommerce_project/features/shop/screens/checkout/widgets/PaymentSection.dart';
+import 'package:flutter_ecommerce_project/navigation_menu.dart';
+import 'package:flutter_ecommerce_project/utils/constants/image_strings.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import 'package:flutter_ecommerce_project/utils/helpers/helper_functions.dart';
+import 'package:get/get.dart';
 
 class Checkout extends StatelessWidget {
   const Checkout({super.key});
@@ -35,15 +40,25 @@ class Checkout extends StatelessWidget {
                 padding: const EdgeInsets.all(SSizes.md),
                 child: const Column(
                   children: [
-                    BillingPayment(),
+                    AmountSection(),
                     Divider(),
                     SizedBox(height: SSizes.spaceBtwItems,),
-                    BillingAddress(),
+                    PaymentSection(),
+                    SizedBox(height: SSizes.spaceBtwItems,),
+                    BillingAddressSection()
                   ],
                 ),
               )
             ],
           ),
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(SSizes.defaultSpace),
+        child: ElevatedButton(
+          onPressed: ()=>Get.to(
+          SuccessScreen(image: SImages.paypal, title: "Payment Success", subtitle: "Your Item will be shipped soon", callback: () => Get.offAll(const NavigationMenu()))),
+          child: const Text("Checkout \$750.00"),
         ),
       ),
     );

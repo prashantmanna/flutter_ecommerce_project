@@ -29,7 +29,7 @@ class Sectionheading extends StatelessWidget {
 
         ),
         if(showActionButton) TextButton(onPressed: onPressed, child: Text(buttonTitle,
-          style: dark ? Theme.of(context).textTheme.headlineSmall!.apply(color: Colors.lightBlueAccent) : Theme.of(context).textTheme.headlineSmall!.apply(color: CupertinoColors.systemBlue),
+          style: dark ? Theme.of(context).textTheme.headlineSmall!.apply(color: Colors.lightBlueAccent) : Theme.of(context).textTheme.titleSmall!.apply(color: CupertinoColors.systemBlue),
         ))
       ],
     );

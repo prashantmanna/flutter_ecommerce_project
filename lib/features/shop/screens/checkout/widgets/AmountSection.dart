@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
-class BillingPayment extends StatelessWidget {
-  const BillingPayment({super.key});
+class AmountSection extends StatelessWidget {
+  const AmountSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class BillingPayment extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-             Text("Subtotal",style: Theme.of(context).textTheme.bodyMedium,),
+            Text("Subtotal",style: Theme.of(context).textTheme.bodyMedium,),
             Text("\$750.0",style: Theme.of(context).textTheme.labelLarge,),
           ],
         ),
