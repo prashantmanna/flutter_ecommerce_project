@@ -7,6 +7,8 @@ import 'package:flutter_ecommerce_project/features/personalization/screens/addre
 import 'package:flutter_ecommerce_project/features/personalization/screens/profile/user_profile/ProfileScreen.dart';
 import 'package:flutter_ecommerce_project/features/personalization/screens/profile/user_profile/UserProfileTitle.dart';
 import 'package:flutter_ecommerce_project/features/personalization/screens/profile/user_profile/settings_menu.dart';
+import 'package:flutter_ecommerce_project/features/shop/screens/cart/MyCart.dart';
+import 'package:flutter_ecommerce_project/features/shop/screens/orders/MyOrders.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -41,8 +43,8 @@ class ProfileSettings extends StatelessWidget {
                 const Sectionheading(title: "Account Settings",showActionButton: false,),
                 const SizedBox(height: SSizes.spaceBtwItems,),
                 SettingsMenu(icon: Iconsax.safe_home, title: "My Addresses", subtitle: "Set shopping delivery address",onTap: ()=>Get.to(const Address()),),
-                SettingsMenu(icon: Iconsax.shopping_cart, title: "My Cart", subtitle: "Add ,remove products and save to checkout",onTap: (){},),
-                SettingsMenu(icon: Iconsax.bag_tick, title: "My Orders", subtitle: "In-progress and completed orders",onTap: (){},),
+                SettingsMenu(icon: Iconsax.shopping_cart, title: "My Cart", subtitle: "Add ,remove products and save to checkout",onTap: ()=>Get.to(const MyCart()),),
+                SettingsMenu(icon: Iconsax.bag_tick, title: "My Orders", subtitle: "In-progress and completed orders",onTap: ()=>Get.to(const MyOrders()),),
                 SettingsMenu(icon: Iconsax.bank, title: "Bank Account", subtitle: "Withdraw balance to registered bank account",onTap: (){},),
                 SettingsMenu(icon: Iconsax.discount_shape, title: "My Coupons", subtitle: "List of all the discounted coupons",onTap: (){},),
                 SettingsMenu(icon: Iconsax.notification, title: "Notifications", subtitle: "Set Any kind of notification message",onTap: (){},),
