@@ -11,22 +11,22 @@ class SubCategory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppbar(
+      appBar: const CustomAppbar(
         title: Text('Sports Shoes'),showBackArrow: true,
       ),
       
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(SSizes.defaultSpace),
+          padding: const EdgeInsets.all(SSizes.defaultSpace),
           child: Column(
             children: [
-              RoundedBanner(imageUrl: SImages.banner1,width: double.infinity,applyImageRadius: true,),
-              SizedBox(height: SSizes.spaceBtwSections,),
+              const RoundedBanner(imageUrl: SImages.banner1,width: double.infinity,applyImageRadius: true,),
+              const SizedBox(height: SSizes.spaceBtwSections,),
               Column(
                 children: [
                   Sectionheading(title: "Sports Shoes",onPressed: (){},),
-                  SizedBox(height: SSizes.spaceBtwItems/2,),
-                  ProductHorizontal()
+                  const SizedBox(height: SSizes.spaceBtwItems/2,),
+                  const ProductHorizontal()
                 ],
               )
             ],

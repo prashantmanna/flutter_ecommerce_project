@@ -29,10 +29,10 @@ class ProductHorizontal extends StatelessWidget {
           CircularWidget(
             height: 120,
             bgColor: dark ? Scolors.dark : Scolors.light,
-            padding: EdgeInsets.all(SSizes.xs),
+            padding: const EdgeInsets.all(SSizes.xs),
             child: Stack(
               children: [
-                SizedBox(
+                const SizedBox(
                   height:120,
                   width:120,
                   child: RoundedBanner(

@@ -22,7 +22,7 @@ class HomeCategories extends StatelessWidget {
             return  VerticalImageText(
               image: SImages.product2,
               title: 'Laptop',
-              onTap: ()=>Get.to(SubCategory()),
+              onTap: ()=>Get.to(const SubCategory()),
             );
           }),
     );
