@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/common/custom_shapes/CircularWidget.dart';
+import 'package:flutter_ecommerce_project/common/title_text/BrandTitleWIthVerifiedIcon.dart';
+import 'package:flutter_ecommerce_project/common/title_text/product_price_text.dart';
+import 'package:flutter_ecommerce_project/common/title_text/product_title_text.dart';
 import 'package:flutter_ecommerce_project/common/widgets/banner/RoundedBanner.dart';
 import 'package:flutter_ecommerce_project/utils/constants/image_strings.dart';
 import 'package:flutter_ecommerce_project/utils/helpers/helper_functions.dart';
@@ -8,7 +11,6 @@ import 'package:iconsax/iconsax.dart';
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../icons/CircularIcon.dart';
-import '../../styles/SShadowStyle.dart';
 class ProductHorizontal extends StatelessWidget {
   const ProductHorizontal({super.key});
 
@@ -17,12 +19,10 @@ class ProductHorizontal extends StatelessWidget {
     final dark = SHelperFunctions.isDarkMode(context);
     return  Container(
         width: 310,
-
         padding: const EdgeInsets.all(1),
     decoration: BoxDecoration(
     borderRadius: BorderRadius.circular(SSizes.productImageRadius),
-    boxShadow: [SShadowStyle.verticalProductShadow],
-    color: dark ? Scolors.darkGrey : Scolors.white
+    color: dark ? Scolors.darkGrey : Scolors.softGrey
     ),
       child: Row(
         children: [
@@ -51,6 +51,47 @@ class ProductHorizontal extends StatelessWidget {
                     right: 0,
                     child: SCircularIcon(icon: Iconsax.heart,color: Colors.redAccent,))
               ],
+            ),
+          ),
+          SizedBox(
+            width: 180,
+            child: Padding(
+              padding: const EdgeInsets.only(top: SSizes.sm,left: SSizes.sm),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      product_title_text(title: "Adidas Military Shoes",smallSize: true,),
+                      SizedBox(height: SSizes.spaceBtwItems/2,),
+                      BrandTitleWithVerifiedIcon(title: "Adidas")
+                    ],
+                  ),
+                  const Spacer(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      //price
+                      const Flexible(child: product_price_text(price: "399")),
+                      //add to cart
+                      Container(
+                        decoration: const BoxDecoration(
+                          color: Scolors.dark,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(SSizes.cardRadiusMd),
+                              bottomRight: Radius.circular(SSizes.productImageRadius)
+                          ),
+                        ),
+                        child: const SizedBox(
+                            width: SSizes.iconLg*1.2,
+                            height: SSizes.iconLg*1.2,
+                            child: Center(child: Icon(Iconsax.add,color: Scolors.white,))),
+                      )
+                    ],
+                  )
+                ],
+              ),
             ),
           )
         ],

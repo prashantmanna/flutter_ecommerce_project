@@ -31,8 +31,6 @@ class Brandcard extends StatelessWidget {
                 isNetworkImage: false,
                 url: SImages.watch1,
                 bgColor: Colors.transparent,
-
-
               )
             ),
             SizedBox(width: SSizes.spaceBtwItems/2,),

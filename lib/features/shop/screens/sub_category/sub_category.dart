@@ -26,7 +26,14 @@ class SubCategory extends StatelessWidget {
                 children: [
                   Sectionheading(title: "Sports Shoes",onPressed: (){},),
                   const SizedBox(height: SSizes.spaceBtwItems/2,),
-                  const ProductHorizontal()
+                  SizedBox(
+                    height: 120,
+                    child: ListView.separated(
+                        separatorBuilder: (context,index)=> const SizedBox(width: SSizes.spaceBtwItems,),
+                        itemCount: 4,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context,index)=> const ProductHorizontal()),
+                  )
                 ],
               )
             ],

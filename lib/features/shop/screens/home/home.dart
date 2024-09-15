@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/common/layouts/SGridLayout.dart';
+import 'package:flutter_ecommerce_project/features/shop/screens/allproducts/AllProducts.dart';
 import 'package:flutter_ecommerce_project/features/shop/screens/home/widgets/HomeSlider.dart';
 import 'package:flutter_ecommerce_project/utils/constants/colors.dart';
 import 'package:flutter_ecommerce_project/utils/constants/image_strings.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
+import 'package:get/get.dart';
 import '../../../../common/custom_shapes/PrimaryHeaderContainer.dart';
 import '../../../../common/custom_shapes/container/mySearchBar.dart';
 import '../../../../common/widgets/Homecategory/HomeCategory.dart';
@@ -67,7 +69,7 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: SSizes.spaceBtwItems,),
-                  Sectionheading(title:"Popular Products",onPressed: (){},),
+                  Sectionheading(title:"Popular Products",onPressed: ()=>Get.to(const AllProducts()),),
                   const SizedBox(height: SSizes.spaceBtwSections,),
                   //popular products
                   SGridLayout(itemCount: 4,mainAxisExtent: 275,

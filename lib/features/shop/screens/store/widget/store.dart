@@ -9,6 +9,7 @@ import 'package:flutter_ecommerce_project/common/widgets/appbar/CustomTabBar.dar
 import 'package:flutter_ecommerce_project/common/widgets/product_text/Sectionheading.dart';
 
 import 'package:flutter_ecommerce_project/common/widgets/products_cart/MyCartWidget.dart';
+import 'package:flutter_ecommerce_project/features/shop/screens/brands/Brands.dart';
 import 'package:flutter_ecommerce_project/features/shop/screens/cart/MyCart.dart';
 import 'package:flutter_ecommerce_project/features/shop/screens/store/widget/category_tab.dart';
 
@@ -68,7 +69,7 @@ class Store extends StatelessWidget {
                       Sectionheading(
                         title: "Featured Brands",
                         showActionButton: true,
-                        onPressed: () {},
+                        onPressed: ()=>Get.to(const Brands()),
                       ),
                       const SizedBox(
                         height: SSizes.spaceBtwItems,
