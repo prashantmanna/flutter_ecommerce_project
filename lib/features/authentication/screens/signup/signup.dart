@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/common/loginsignup/AppButtonSignIn.dart';
 import 'package:flutter_ecommerce_project/common/loginsignup/AppDivider.dart';
+import 'package:flutter_ecommerce_project/common/widgets/appbar/CustomAppBar.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import 'package:flutter_ecommerce_project/utils/helpers/helper_functions.dart';
 import 'package:get/get.dart';
@@ -9,12 +10,13 @@ import '../../../../common/widgets/signup/SignUpForm.dart';
 
 class Signup extends StatelessWidget {
   const Signup({super.key});
-
   @override
   Widget build(BuildContext context) {
     final dark = SHelperFunctions.isDarkMode(context);
     return Scaffold(
-      appBar: AppBar(),
+      appBar: const CustomAppbar(
+        showBackArrow: true,
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(SSizes.defaultSpace),

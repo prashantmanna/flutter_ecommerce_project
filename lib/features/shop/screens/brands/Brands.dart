@@ -5,11 +5,9 @@ import 'package:flutter_ecommerce_project/common/widgets/product_text/Sectionhea
 import 'package:flutter_ecommerce_project/common/widgets/products_cart/BrandCard.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import 'package:get/get.dart';
-
 import 'BrandProduct.dart';
 class Brands extends StatelessWidget {
   const Brands({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
