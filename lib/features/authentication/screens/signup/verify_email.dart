@@ -64,6 +64,7 @@ class VerifyEmail extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {
                     Get.to(() => SuccessScreen(
+                      text: "Continue",
                       image: "assets/images/onboarding_photos/techny-user-profile-on-phone-screen.png",
                       title: "Your account created successfully",
                       subtitle: "Welcome to ultimate shopping destination.Your account is created.Unleash the joy of seamless online shopping",

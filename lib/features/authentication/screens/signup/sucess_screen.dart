@@ -4,8 +4,11 @@ import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 
 class SuccessScreen extends StatelessWidget {
   final String image,title,subtitle;
+  final String text;
   final VoidCallback callback;
-  const SuccessScreen({super.key, required this.image, required this.title, required this.subtitle, required this.callback});
+  const SuccessScreen({
+    required this.text,
+    super.key, required this.image, required this.title, required this.subtitle, required this.callback});
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +45,8 @@ class SuccessScreen extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: callback,
-                  child: const Text(
-                    "Continue",
+                  child: Text(
+                    text,
                   ),
                 ),
               )

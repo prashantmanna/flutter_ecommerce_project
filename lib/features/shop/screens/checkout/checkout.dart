@@ -57,8 +57,10 @@ class Checkout extends StatelessWidget {
         padding: const EdgeInsets.all(SSizes.defaultSpace),
         child: ElevatedButton(
           onPressed: ()=>Get.to(
-          SuccessScreen(image: SImages.paypal, title: "Payment Success", subtitle: "Your Item will be shipped soon", callback: () => Get.offAll(const NavigationMenu()))),
-          child: const Text("Checkout \$750.00"),
+          SuccessScreen(
+              text: "Continue Shopping",
+              image: SImages.paypal, title: "Payment Success", subtitle: "Your Item will be shipped soon", callback: () => Get.offAll(const NavigationMenu()))),
+          child: const Text("Checkout \$770"),
         ),
       ),
     );
