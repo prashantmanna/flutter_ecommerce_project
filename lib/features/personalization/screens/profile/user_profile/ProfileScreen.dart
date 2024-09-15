@@ -5,6 +5,7 @@ import 'package:flutter_ecommerce_project/common/widgets/appbar/CustomAppBar.dar
 import 'package:flutter_ecommerce_project/common/widgets/product_text/Sectionheading.dart';
 import 'package:flutter_ecommerce_project/features/personalization/screens/profile/ProfileSettings.dart';
 import 'package:flutter_ecommerce_project/features/personalization/screens/profile/user_profile/ProfileInfo.dart';
+import 'package:flutter_ecommerce_project/navigation_menu.dart';
 import 'package:flutter_ecommerce_project/utils/constants/image_strings.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import 'package:get/get.dart';
@@ -55,7 +56,7 @@ class ProfileScreen extends StatelessWidget {
             Center(
               child:
               TextButton(
-                onPressed: ()=> Get.to(const ProfileSettings()),
+                onPressed: ()=> Get.offAll(NavigationMenu()),
                 child: const Text(
                   "Close Account",style: TextStyle(color: Colors.red),
                 ),

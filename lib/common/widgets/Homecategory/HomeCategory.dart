@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_project/features/shop/screens/sub_category/sub_category.dart';
+import 'package:get/get.dart';
 
 import '../../../utils/constants/image_strings.dart';
 import '../product/VerticalTextImage.dart';
@@ -20,7 +22,7 @@ class HomeCategories extends StatelessWidget {
             return  VerticalImageText(
               image: SImages.product2,
               title: 'Laptop',
-              onTap: (){},
+              onTap: ()=>Get.to(SubCategory()),
             );
           }),
     );
