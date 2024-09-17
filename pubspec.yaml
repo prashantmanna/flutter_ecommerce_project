@@ -14,11 +14,9 @@ dependencies:
   #icons
   iconsax: ^0.0.8
 
-
   #state management
   get: ^4.6.6
   get_storage: ^2.1.1
-
 
   #utility packages
   http: ^1.1.0
@@ -59,7 +57,6 @@ flutter:
     - assets/images/products/shoes/
     - assets/images/products/watch/
     - assets/images/payment/
-
   fonts:
     - family: Poppins
       fonts:
