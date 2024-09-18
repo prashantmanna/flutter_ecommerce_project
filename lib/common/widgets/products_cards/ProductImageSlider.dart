@@ -21,7 +21,7 @@ class ProductImageSlider extends StatelessWidget {
     final dark = SHelperFunctions.isDarkMode(context);
     return CurvedEdgeWidget(
       child: Container(
-        color: dark ? Scolors.darkGrey : Scolors.white,
+        color: dark ? Scolors.white : Scolors.white,
         child:  Stack(
 
           children: [
@@ -46,7 +46,7 @@ class ProductImageSlider extends StatelessWidget {
                   itemCount: 6,shrinkWrap: true,scrollDirection: Axis.horizontal,physics: const AlwaysScrollableScrollPhysics(),
                   itemBuilder: (_,index)=>RoundedBanner(
                     width: 80,
-                    fit: BoxFit.scaleDown,
+                    fit: BoxFit.cover,
                     bgColor: dark?Scolors.dark:Colors.white,
                     imageUrl: SImages.mobile3,
                     border: Border.all(color: Scolors.primaryColor),
@@ -56,6 +56,7 @@ class ProductImageSlider extends StatelessWidget {
             ),
             const CustomAppbar(
               showBackArrow: true,
+              color: Colors.black,
               actions: [
                 SCircularIcon(icon: Iconsax.heart,color: Colors.red,)
               ],

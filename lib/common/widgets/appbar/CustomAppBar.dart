@@ -13,11 +13,13 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
         this.leadingIcon,
         this.actions,
         this.leadingOnPressed,
-        this.toolbarHeight});
+        this.toolbarHeight,
+        this.color = Colors.black});
 
   final Widget? title;
   final bool showBackArrow;
   final IconData? leadingIcon;
+  final Color? color;
   final List<Widget>? actions;
   final VoidCallback? leadingOnPressed;
   final double? toolbarHeight;
