@@ -22,7 +22,7 @@ class Choice_chip extends StatelessWidget {
       child: ChoiceChip(
         label: isColor? const SizedBox():Text(text),
         selected: selected,
-        labelStyle: TextStyle(color: selected ? dark ? Colors.white : Colors.black : null),
+        labelStyle: TextStyle(color: selected ? dark ? Colors.white : Colors.black : Colors.white),
         onSelected: onSelected,
         labelPadding: isColor ? const EdgeInsets.all(0) : null,
         shape: isColor ? const CircleBorder() : null,

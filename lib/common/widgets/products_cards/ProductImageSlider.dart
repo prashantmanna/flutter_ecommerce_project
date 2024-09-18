@@ -21,9 +21,8 @@ class ProductImageSlider extends StatelessWidget {
     final dark = SHelperFunctions.isDarkMode(context);
     return CurvedEdgeWidget(
       child: Container(
-        color: dark ? Scolors.white : Scolors.white,
+        color: dark ? Scolors.dark : Scolors.lightGrey,
         child:  Stack(
-
           children: [
             const SizedBox(
               height: 400,
@@ -32,7 +31,6 @@ class ProductImageSlider extends StatelessWidget {
                 padding: EdgeInsets.only(top: SSizes.defaultSpace),
                 child: Center(
                     child: Image(image: AssetImage(SImages.mobile3),fit: BoxFit.cover,)),
-
               ),
             ),
             Positioned(
