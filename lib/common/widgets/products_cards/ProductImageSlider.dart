@@ -12,7 +12,6 @@ import '../banner/RoundedBanner.dart';
 class ProductImageSlider extends StatelessWidget {
   const ProductImageSlider({
     super.key,
-
   });
 
 

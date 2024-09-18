@@ -7,13 +7,13 @@ import 'package:flutter/foundation.dart'
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
 /// Example:
-/// ```dart
+/// dart
 /// import 'firebase_options.dart';
 /// // ...
 /// await Firebase.initializeApp(
 ///   options: DefaultFirebaseOptions.currentPlatform,
 /// );
-/// ```
+///
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
@@ -25,19 +25,13 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
+              'you can reconfigure this by running the FlutterFire CLI again.',
         );
       default:
         throw UnsupportedError(
@@ -45,6 +39,7 @@ class DefaultFirebaseOptions {
         );
     }
   }
+
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyBYKBtE_KfbVfax_m06fcanVU0toJKyywc',
     appId: '1:970031950153:web:902170a1cb27c3d31e9298',
@@ -53,6 +48,7 @@ class DefaultFirebaseOptions {
     authDomain: 'ecommerceapp-b6170.firebaseapp.com',
     storageBucket: 'ecommerceapp-b6170.appspot.com',
   );
+
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDo_mp5T_7IdWIzQeS-dTIPbV9C6dbh4z4',
     appId: '1:970031950153:android:4b31013052fe1bce1e9298',
@@ -60,6 +56,7 @@ class DefaultFirebaseOptions {
     projectId: 'ecommerceapp-b6170',
     storageBucket: 'ecommerceapp-b6170.appspot.com',
   );
+
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyBGxg4reafXQZ3csiflxk581gQmma2JPFw',
     appId: '1:970031950153:ios:9d2849f0e092472c1e9298',
@@ -69,6 +66,26 @@ class DefaultFirebaseOptions {
     androidClientId: '970031950153-uu6832h9r52dso4f2ch0v9fh1rm90kgp.apps.googleusercontent.com',
     iosClientId: '970031950153-tpdu5e4eq4rfdi6gvfkfbo4du4ldtkq8.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterEcommerceProject',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyBGxg4reafXQZ3csiflxk581gQmma2JPFw',
+    appId: '1:970031950153:ios:9d2849f0e092472c1e9298',
+    messagingSenderId: '970031950153',
+    projectId: 'ecommerceapp-b6170',
+    storageBucket: 'ecommerceapp-b6170.appspot.com',
+    androidClientId: '970031950153-uu6832h9r52dso4f2ch0v9fh1rm90kgp.apps.googleusercontent.com',
+    iosClientId: '970031950153-tpdu5e4eq4rfdi6gvfkfbo4du4ldtkq8.apps.googleusercontent.com',
+    iosBundleId: 'com.example.flutterEcommerceProject',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyBYKBtE_KfbVfax_m06fcanVU0toJKyywc',
+    appId: '1:970031950153:web:e876e202706458d21e9298',
+    messagingSenderId: '970031950153',
+    projectId: 'ecommerceapp-b6170',
+    authDomain: 'ecommerceapp-b6170.firebaseapp.com',
+    storageBucket: 'ecommerceapp-b6170.appspot.com',
   );
 
 }
