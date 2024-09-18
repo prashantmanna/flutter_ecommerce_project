@@ -4,16 +4,17 @@ publish_to: 'none'
 version: 1.0.0+1
 environment:
   sdk: '>=3.4.0-282.3.beta <4.0.0'
+
 dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.6
-  #icons
+  # icons
   iconsax: ^0.0.8
-  #state management
+  # state management
   get: ^4.6.6
   get_storage: ^2.1.1
-  #utility packages
+  # utility packages
   http: ^1.1.0
   intl: ^0.18.1
   logger: ^2.0.1
@@ -23,15 +24,17 @@ dependencies:
   carousel_slider: ^5.0.0
   readmore: ^3.0.0
   flutter_rating_bar: ^4.0.1
-  #firebase
+  # firebase
   firebase_core: ^3.4.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
+
 flutter:
   uses-material-design: true
-  #assets
+  # assets
   assets:
     - assets/icons/
     - assets/logos/
@@ -48,6 +51,7 @@ flutter:
     - assets/images/products/shoes/
     - assets/images/products/watch/
     - assets/images/payment/
+
   fonts:
     - family: Poppins
       fonts:
@@ -67,31 +71,9 @@ flutter:
           weight: 600
         - asset: assets/fonts/Poppins-Bold.ttf
           weight: 800
-  
-  
 
-  
-  
-
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/logos/splash.png
+  android: true
+  ios: true
