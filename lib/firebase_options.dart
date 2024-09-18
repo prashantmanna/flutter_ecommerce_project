@@ -45,7 +45,6 @@ class DefaultFirebaseOptions {
         );
     }
   }
-
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyBYKBtE_KfbVfax_m06fcanVU0toJKyywc',
     appId: '1:970031950153:web:902170a1cb27c3d31e9298',
@@ -54,7 +53,6 @@ class DefaultFirebaseOptions {
     authDomain: 'ecommerceapp-b6170.firebaseapp.com',
     storageBucket: 'ecommerceapp-b6170.appspot.com',
   );
-
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDo_mp5T_7IdWIzQeS-dTIPbV9C6dbh4z4',
     appId: '1:970031950153:android:4b31013052fe1bce1e9298',
@@ -62,7 +60,6 @@ class DefaultFirebaseOptions {
     projectId: 'ecommerceapp-b6170',
     storageBucket: 'ecommerceapp-b6170.appspot.com',
   );
-
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyBGxg4reafXQZ3csiflxk581gQmma2JPFw',
     appId: '1:970031950153:ios:9d2849f0e092472c1e9298',

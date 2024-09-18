@@ -8,8 +8,6 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("current height ${MediaQuery.of(context).size.height}");
-    print("current width ${MediaQuery.of(context).size.width}");
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
