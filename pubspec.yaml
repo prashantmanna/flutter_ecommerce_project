@@ -26,6 +26,8 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   # firebase
   firebase_core: ^3.4.0
+  lottie: ^3.1.2
+  connectivity_plus: ^6.0.5
 
 dev_dependencies:
   flutter_test:
@@ -77,3 +79,8 @@ flutter_native_splash:
   image: assets/logos/splash.png
   android: true
   ios: true
+  android_12:
+    color: "#ffffff"
+    image: assets/logos/splash.png
+    android: true
+    ios: true

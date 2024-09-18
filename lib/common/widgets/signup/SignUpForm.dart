@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_project/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:flutter_ecommerce_project/features/authentication/screens/signup/verify_email.dart';
+import 'package:flutter_ecommerce_project/utils/validators/validation.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -18,13 +20,18 @@ class SignUpForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = SHelperFunctions.isDarkMode(context);
+    final controller = Get.put(SignupController());
+
     return Form(
+      key: controller.signUpFormKey,
       child: Column(
         children: [
           Row(
             children: [
               Expanded(
                 child: TextFormField(
+                  controller: controller.firstName,
+                  validator: (val) => SValidator.validateEmptyText('First Name', val),
                   decoration: const InputDecoration(
                     labelText: "first name",
                     prefixIcon: Icon(Iconsax.user),
@@ -37,6 +44,8 @@ class SignUpForm extends StatelessWidget {
               ),
               Expanded(
                 child: TextFormField(
+                  controller: controller.lastName,
+                  validator: (val) => SValidator.validateEmptyText('Last Name', val),
                   decoration: const InputDecoration(
                     labelText: "last name",
                     prefixIcon: Icon(Iconsax.user),
@@ -50,6 +59,8 @@ class SignUpForm extends StatelessWidget {
             height: SSizes.spaceBtwInputFields,
           ),
           TextFormField(
+            controller: controller.userName,
+              validator: (val) => SValidator.validateEmptyText('username', val),
             decoration: const InputDecoration(
               labelText: "Username",
               prefixIcon: Icon(Iconsax.user_edit),
@@ -60,6 +71,8 @@ class SignUpForm extends StatelessWidget {
             height: SSizes.spaceBtwInputFields,
           ),
           TextFormField(
+            controller: controller.email,
+            validator: (val) => SValidator.validateEmail(val),
             decoration: const InputDecoration(
               labelText: "E-mail",
               prefixIcon: Icon(Iconsax.direct),
@@ -70,6 +83,8 @@ class SignUpForm extends StatelessWidget {
             height: SSizes.spaceBtwInputFields,
           ),
           TextFormField(
+            controller: controller.phoneNumber,
+            validator: (val) => SValidator.validatePhoneNumber(val),
             decoration: const InputDecoration(
               labelText: "Mobile Number",
               prefixIcon: Icon(Iconsax.call),
@@ -80,6 +95,8 @@ class SignUpForm extends StatelessWidget {
             height: SSizes.spaceBtwInputFields,
           ),
           TextFormField(
+            controller: controller.password,
+            validator: (val)=> SValidator.validatePassword(val),
             decoration: const InputDecoration(
                 labelText: "Password",
                 prefixIcon: Icon(Iconsax.password_check),
@@ -121,8 +138,9 @@ class SignUpForm extends StatelessWidget {
           const SizedBox(height: SSizes.spaceBtwSections,),
           SizedBox(width: double.infinity,child:
           ElevatedButton(
+
             onPressed: (){
-              Get.to(const VerifyEmail());
+              controller.signup_key_controller();
             },
             child: const Text("Create Account"),
           ),)

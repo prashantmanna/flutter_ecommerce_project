@@ -1,5 +1,13 @@
+import 'package:get/get.dart';
+
 class SValidator{
 
+  static String? validateEmptyText(String? fieldname,String? val){
+    if(val == null || val.isEmpty){
+      return '$fieldname is required';
+    }
+    return null;
+  }
   static String? validateEmail(String? value){
     if(value == null || value.isEmpty){
       return 'Email is Required';
