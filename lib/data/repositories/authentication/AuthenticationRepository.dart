@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_ecommerce_project/features/authentication/screens/login/login.dart';
 import 'package:flutter_ecommerce_project/features/authentication/screens/onboardingpage/onboarding.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -8,7 +9,7 @@ class AuthenticationRepository extends GetxController{
 
   static AuthenticationRepository get instance => Get.find();
   final deviceStorage = GetStorage();
-
+  final auth = FirebaseAuth.instance;
   @override
   void onReady() {
     FlutterNativeSplash.remove();
@@ -22,5 +23,13 @@ class AuthenticationRepository extends GetxController{
 
 
         : Get.offAll(() => const OnboardingScreen());
+  }
+
+  Future<UserCredential> registerWithEmailIdAndPassword(String email,String password) async{
+    try{
+      return await auth.createUserWithEmailAndPassword(email: email, password: password);
+    } catch(e){
+      throw "Something went wrong , Please try Again";
+    }
   }
 }
