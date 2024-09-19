@@ -62,7 +62,7 @@ class SignupController extends GetxController {
       await userRepository.saveUserData(newUser);
       Loaders.successSnackBar(title: "Congratulations",message: "Your Account has been created! verify your email to continue");
 
-      Get.to(VerifyEmail());
+      Get.to(const VerifyEmail());
       // Proceed with the signup process
       // Your signup logic here
     } catch (e) {
