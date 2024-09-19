@@ -4,7 +4,7 @@ import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import 'package:lottie/lottie.dart';
 
 class SAnimationLoaderWidget extends StatelessWidget{
-  const SAnimationLoaderWidget({
+  const SAnimationLoaderWidget({super.key, 
     required this.text,
     required this.animation,
     this.showAction = false,
@@ -26,13 +26,13 @@ class SAnimationLoaderWidget extends StatelessWidget{
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Lottie.asset(animation,width: MediaQuery.of(context).size.width * 0.8),
-          SizedBox(height: SSizes.defaultSpace,),
+          const SizedBox(height: SSizes.defaultSpace,),
           Text(
             text,
             style: Theme.of(context).textTheme.bodyMedium,
             textAlign: TextAlign.center,
           ),
-          SizedBox(
+          const SizedBox(
             height: SSizes.defaultSpace,
           ),
           showAction ? SizedBox(
@@ -47,7 +47,7 @@ class SAnimationLoaderWidget extends StatelessWidget{
                 style: Theme.of(context).textTheme.bodyMedium!.apply(color: Scolors.light),
               ),
             ),
-          ) : SizedBox(),
+          ) : const SizedBox(),
         ],
       ),
     );

@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/features/authentication/screens/login/login.dart';
 import 'package:flutter_ecommerce_project/features/authentication/screens/onboardingpage/onboarding.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -19,9 +18,9 @@ class AuthenticationRepository extends GetxController{
   screenRedirect() async{
     deviceStorage.writeIfNull('isFirstTime',true);
     print(deviceStorage.read('isFirstTime'));
-    deviceStorage.read('isFirstTime') != true ? Get.offAll(() => Login())
+    deviceStorage.read('isFirstTime') != true ? Get.offAll(() => const Login())
 
 
-        : Get.offAll(() => OnboardingScreen());
+        : Get.offAll(() => const OnboardingScreen());
   }
 }

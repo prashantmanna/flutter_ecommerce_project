@@ -65,4 +65,7 @@ class SImages{
   static const String paypal = "assets/images/payment/paypal.png";
   static const String visa = "assets/images/payment/visa.png";
   static const String paytm = "assets/images/payment/paytm.png";
+
+  //animation
+  static const String loading = "assets/animation/loading.json";
 }

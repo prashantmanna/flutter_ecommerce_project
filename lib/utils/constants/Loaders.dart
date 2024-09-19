@@ -10,11 +10,11 @@ class Loaders {
     ScaffoldMessenger.of(Get.context!).showSnackBar(
       SnackBar(
         elevation: 0,
-        duration: Duration(seconds: 3),
+        duration: const Duration(seconds: 3),
         backgroundColor: Colors.transparent,
         content: Container(
-          padding: EdgeInsets.all(12.0),
-          margin: EdgeInsets.symmetric(horizontal: 30),
+          padding: const EdgeInsets.all(12.0),
+          margin: const EdgeInsets.symmetric(horizontal: 30),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
             color: SHelperFunctions.isDarkMode(Get.context!) ? Scolors.darkerGrey.withOpacity(0.9) : Scolors.grey.withOpacity(0.9)
@@ -36,8 +36,8 @@ class Loaders {
         backgroundColor: Scolors.primaryColor,
         snackPosition: SnackPosition.BOTTOM,
         duration: Duration(seconds: duration),
-        margin: EdgeInsets.all(10),
-        icon: Icon(Iconsax.check, color: Scolors.white,)
+        margin: const EdgeInsets.all(10),
+        icon: const Icon(Iconsax.check, color: Scolors.white,)
     );
   }
 
@@ -48,9 +48,9 @@ class Loaders {
         colorText: Scolors.white,
         backgroundColor: Colors.orange,
         snackPosition: SnackPosition.BOTTOM,
-        duration: Duration(seconds: 3),
-        margin: EdgeInsets.all(20),
-        icon: Icon(Iconsax.warning_2, color: Scolors.white,)
+        duration: const Duration(seconds: 3),
+        margin: const EdgeInsets.all(20),
+        icon: const Icon(Iconsax.warning_2, color: Scolors.white,)
     );
   }
 
@@ -61,9 +61,9 @@ class Loaders {
       colorText: Scolors.white,
       backgroundColor: Colors.red.shade600,
     snackPosition: SnackPosition.BOTTOM,
-    duration: Duration(seconds: 3),
-    margin: EdgeInsets.all(20),
-    icon: Icon(Iconsax.warning_2,color: Scolors.white,)
+    duration: const Duration(seconds: 3),
+    margin: const EdgeInsets.all(20),
+    icon: const Icon(Iconsax.warning_2,color: Scolors.white,)
     );
   }
 }
