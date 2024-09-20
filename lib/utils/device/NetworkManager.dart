@@ -4,8 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import '../constants/Loaders.dart';
 
-class NetworkManager extends GetxController {
-  static NetworkManager get instance => Get.find();
+class SNetworkManager extends GetxController {
+  static SNetworkManager get instance => Get.find();
 
   final Connectivity _connectivity = Connectivity();
   late StreamSubscription<ConnectivityResult> _connectivitySubscription;
@@ -14,7 +14,7 @@ class NetworkManager extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    _connectivitySubscription = _connectivity.onConnectivityChanged.listen(_updateConnectionStatus);
+    _connectivitySubscription = _connectivity.onConnectivityChanged.listen(_updateConnectionStatus as void Function(List<ConnectivityResult> event)?) as StreamSubscription<ConnectivityResult>;
   }
 
   Future<void> _updateConnectionStatus(ConnectivityResult result) async {

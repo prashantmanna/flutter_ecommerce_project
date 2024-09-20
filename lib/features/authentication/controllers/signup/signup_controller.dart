@@ -32,7 +32,7 @@ class SignupController extends GetxController {
       }
 
       // Check internet connection
-      final isConnected = await NetworkManager.instance.isConnected();
+      final isConnected = await SNetworkManager.instance.isConnected();
       if (!isConnected) {
         await Loaders.errorSnackBar(title: "No Internet Connection", message: "Please check your internet connection and try again.");
         return;
