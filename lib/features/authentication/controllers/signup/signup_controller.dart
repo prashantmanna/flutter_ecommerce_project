@@ -34,39 +34,74 @@ class SignupController extends GetxController {
       // Check internet connection
       final isConnected = await SNetworkManager.instance.isConnected();
       if (!isConnected) {
-        await Loaders.errorSnackBar(title: "No Internet Connection", message: "Please check your internet connection and try again.");
+        await Loaders.errorSnackBar(
+            title: "No Internet Connection",
+            message: "Please check your internet connection and try again.");
         return;
       }
 
       if (!PrivacyPolicy.value) {
         Loaders.warningSnackBar(
             title: "Accept Privacy Policy",
-            message: "In order to create an account, you must read and accept the privacy policy & terms of use"
-        );
+            message: "In order to create an account, you must read and accept the privacy policy & terms of use");
         return;
       }
 
       // Show loading animation
       FullScreenLoader.openLoadingDialog("We are processing your information", SImages.loading);
 
-      final userCredential = await AuthenticationRepository.instance.registerWithEmailIdAndPassword(email.text.trim(), password.text.trim());
+      // Proceed with the signup process and debug the response
+      final userCredential = await AuthenticationRepository.instance
+          .registerWithEmailIdAndPassword(
+          email.text.trim(), password.text.trim());
+
+      // Debugging the response
+      print("User Credential: ${userCredential.runtimeType}"); // Check the type of userCredential
+      print("User UID: ${userCredential.user!.uid.runtimeType}"); // Check if UID is a string
+
+      // Ensure all fields are strings before creating the UserModel
       final newUser = UserModel(
-          id:userCredential.user!.uid,
-          firstName:firstName.text.trim(),
-          lastName:lastName.text.trim(),
-          userName:userName.text.trim(),
-          email:email.text.trim(),
-          phoneNumber:phoneNumber.text.trim(),
-          profilePicture:'');
+        id: userCredential.user!.uid.toString(),  // Ensure the UID is a string
+        firstName: firstName.text.trim(),
+        lastName: lastName.text.trim(),
+        userName: userName.text.trim(),
+        email: email.text.trim(),
+        phoneNumber: phoneNumber.text.trim(),
+        profilePicture: '',  // Empty string in case profile picture isn't used
+      );
+
+      // Debug new user data to ensure the fields are correct
+      print("New User: ${newUser.runtimeType}");
+
+      // Make sure that the repository correctly processes the user model
       final userRepository = Get.put(UserRepository());
       await userRepository.saveUserData(newUser);
-      Loaders.successSnackBar(title: "Congratulations",message: "Your Account has been created! verify your email to continue");
+
+      Loaders.successSnackBar(
+          title: "Congratulations",
+          message: "Your Account has been created! Verify your email to continue");
 
       Get.to(const VerifyEmail());
-      // Proceed with the signup process
-      // Your signup logic here
     } catch (e) {
-      await Loaders.errorSnackBar(title: "Oh Snap!", message: e.toString());
+      print(e.toString());
+
+      // Safeguard error handling in case data was of wrong type
+      if (e is TypeError) {
+        await Loaders.errorSnackBar(
+            title: "Data Type Error", message: "Unexpected data format. Please try again.");
+      } else {
+        await Loaders.errorSnackBar(title: "Oh Snap!", message: e.toString());
+      }
+
+      // Debug print statements to track data
+
+      print("Email: ${email.text.runtimeType}");
+      print("Password: ${password.text.runtimeType}");
+      print("Username: ${userName.text.runtimeType}");
+      print("First Name: ${firstName.text.runtimeType}");
+      print("Last Name: ${lastName.text.runtimeType}");
+      print("Phone Number: ${phoneNumber.text.runtimeType}");
+
     }
   }
 }

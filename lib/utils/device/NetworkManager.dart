@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import '../constants/Loaders.dart';
 
-class SNetworkManager extends GetxController {
+class SNetworkManager extends GetxService {
   static SNetworkManager get instance => Get.find();
 
   final Connectivity _connectivity = Connectivity();
@@ -14,9 +14,11 @@ class SNetworkManager extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    _connectivitySubscription = _connectivity.onConnectivityChanged.listen(_updateConnectionStatus as void Function(List<ConnectivityResult> event)?) as StreamSubscription<ConnectivityResult>;
+    // Listen for connectivity changes (this provides ConnectivityResult, not List<ConnectivityResult>)
+    _connectivitySubscription = _connectivity.onConnectivityChanged.listen(_updateConnectionStatus);
   }
 
+  // Correct callback type (ConnectivityResult, not List<ConnectivityResult>)
   Future<void> _updateConnectionStatus(ConnectivityResult result) async {
     _connectionStatus.value = result;
     if (_connectionStatus.value == ConnectivityResult.none) {
@@ -24,6 +26,7 @@ class SNetworkManager extends GetxController {
     }
   }
 
+  // Check if the device is connected
   Future<bool> isConnected() async {
     try {
       final result = await _connectivity.checkConnectivity();

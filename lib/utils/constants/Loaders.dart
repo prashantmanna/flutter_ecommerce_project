@@ -60,6 +60,7 @@ class Loaders {
       isDismissible: true,
       colorText: Scolors.white,
       backgroundColor: Colors.red.shade600,
+
     snackPosition: SnackPosition.BOTTOM,
     duration: const Duration(seconds: 3),
     margin: const EdgeInsets.all(20),

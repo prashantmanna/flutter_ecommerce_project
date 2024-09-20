@@ -1,14 +1,13 @@
-
 import '../../../utils/device/Formatter.dart';
 
 class UserModel {
-  final String id;
-  String firstName;
-  String lastName;
-  final String userName;
-  final String email;
-  String phoneNumber;
-  String profilePicture;
+  final dynamic id;
+  late dynamic firstName;
+  late dynamic lastName;
+  final dynamic userName;
+  final dynamic email;
+  late dynamic phoneNumber;
+  late dynamic profilePicture;
 
   UserModel({
     required this.id,
@@ -17,23 +16,32 @@ class UserModel {
     required this.userName,
     required this.email,
     required this.phoneNumber,
-    required this.profilePicture
-});
+    required this.profilePicture,
+  });
 
   String get fullName => '$firstName $lastName';
   String get formattedPhoneNo => Formatter.formatPhoneNumber(phoneNumber);
-  static List<String> nameParts(fullName) => fullName.split(" ");
 
-  static UserModel empty() => UserModel(id: '', firstName: '', lastName: '', userName: '', email: '', phoneNumber: '', profilePicture: '');
+  static List<String> nameParts(String fullName) => fullName.split(" ");
 
-  Map<String,dynamic> toJson(){
+  static UserModel empty() => UserModel(
+    id: '',
+    firstName: '',
+    lastName: '',
+    userName: '',
+    email: '',
+    phoneNumber: '',
+    profilePicture: '',
+  );
+
+  Map<String, String> toJson() {
     return {
-      'FirstName': firstName,
-      'LastName': lastName,
-      'Username': userName,
-      'Email': email,
-      'phone number': phoneNumber,
-      'profile picture': profilePicture
+      'firstName': firstName,
+      'lastName': lastName,
+      'userName': userName,
+      'email': email,
+      'phoneNumber': phoneNumber,
+      'profilePicture': profilePicture,
     };
   }
 }
