@@ -33,7 +33,6 @@ class UserModel {
     phoneNumber: '',
     profilePicture: '',
   );
-
   Map<String, String> toJson() {
     return {
       'firstName': firstName,

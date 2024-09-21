@@ -7,7 +7,6 @@ import 'package:get/get.dart';
 import '../../../../data/repositories/models/UserModel.dart';
 import '../../../../utils/constants/Loaders.dart';
 import '../../../../utils/constants/image_strings.dart';
-import '../../../../utils/device/NetworkManager.dart';
 import '../../../../utils/pop_ups/full_screen_loader.dart';
 
 class SignupController extends GetxController {
@@ -28,15 +27,6 @@ class SignupController extends GetxController {
     try {
       // Validate the form first
       if (!signUpFormKey.currentState!.validate()) {
-        return;
-      }
-
-      // Check internet connection
-      final isConnected = await SNetworkManager.instance.isConnected();
-      if (!isConnected) {
-        await Loaders.errorSnackBar(
-            title: "No Internet Connection",
-            message: "Please check your internet connection and try again.");
         return;
       }
 
