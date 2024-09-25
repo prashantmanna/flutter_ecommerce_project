@@ -25,7 +25,4 @@ plugins {
     id "org.jetbrains.kotlin.android" version "1.7.10" apply false
 }
 
-include ":app"
-include ':connectivity_plus'
-project(':connectivity_plus').projectDir = new File(rootProject.projectDir, '../connectivity_plus/android')
 

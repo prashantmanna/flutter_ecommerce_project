@@ -1,12 +1,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:label="flutter_ecommerce_project"
-        android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:allowBackup="true"
         android:theme="@style/NormalTheme"> <!-- Changed to NormalTheme -->
 
+        <!-- MainActivity Configuration -->
         <activity
             android:exported="true"
             android:name=".MainActivity"
@@ -21,16 +25,19 @@
             </intent-filter>
         </activity>
 
+        <!-- Flutter Embedding Metadata -->
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
 
     </application>
 
+    <!-- Intent Queries -->
     <queries>
         <intent>
             <action android:name="android.intent.action.PROCESS_TEXT" />
             <data android:mimeType="text/plain" />
         </intent>
     </queries>
+
 </manifest>
