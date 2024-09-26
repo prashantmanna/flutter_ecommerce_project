@@ -26,7 +26,19 @@ class FullScreenLoader{
     );
   }
 
-  static stopLoading(){
-    Navigator.of(Get.overlayContext!).pop();
-  }
+
+    static stopLoading() {
+       try{
+         if (Get.overlayContext != null) {
+          Navigator.of(Get.overlayContext!).pop();
+        } else {
+          Get.back(); // Fallback if the overlay context is null
+        }
+      } catch (e) {
+        print("Error stopping loader: $e");
+      }
+    }
+
+
+
 }

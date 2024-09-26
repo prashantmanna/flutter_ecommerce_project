@@ -17,10 +17,11 @@ class AppColum extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Image(
-          height: 150,
+          height: 120,
           image:
           AssetImage(dark ? SImages.whiteLogo : SImages.darkLogo),
         ),
+        SizedBox(height: 20,),
         Text(
           SText.loginTitle,
           style: Theme.of(context).textTheme.headlineMedium,

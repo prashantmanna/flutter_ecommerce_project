@@ -3,7 +3,6 @@ import 'package:flutter_ecommerce_project/data/repositories/authentication/Authe
 import 'package:flutter_ecommerce_project/data/repositories/user/user_repository.dart';
 import 'package:flutter_ecommerce_project/features/authentication/screens/signup/verify_email.dart';
 import 'package:get/get.dart';
-
 import '../../../../data/repositories/models/UserModel.dart';
 import '../../../../utils/constants/Loaders.dart';
 import '../../../../utils/constants/image_strings.dart';
@@ -38,20 +37,15 @@ class SignupController extends GetxController {
       }
 
       // Show loading animation
-      FullScreenLoader.openLoadingDialog("We are processing your information", SImages.loading);
+      // FullScreenLoader.openLoadingDialog("We are processing your information", SImages.loading);
 
       // Proceed with the signup process and debug the response
       final userCredential = await AuthenticationRepository.instance
-          .registerWithEmailIdAndPassword(
-          email.text.trim(), password.text.trim());
-
-      // Debugging the response
-      print("User Credential: ${userCredential.runtimeType}"); // Check the type of userCredential
-      print("User UID: ${userCredential.user!.uid.runtimeType}"); // Check if UID is a string
+          .registerWithEmailIdAndPassword(email.text.trim(), password.text.trim());
 
       // Ensure all fields are strings before creating the UserModel
       final newUser = UserModel(
-        id: userCredential.user!.uid.toString(),  // Ensure the UID is a string
+        id: userCredential.user!.uid.toString(),
         firstName: firstName.text.trim(),
         lastName: lastName.text.trim(),
         userName: userName.text.trim(),
@@ -60,38 +54,41 @@ class SignupController extends GetxController {
         profilePicture: '',  // Empty string in case profile picture isn't used
       );
 
-      // Debug new user data to ensure the fields are correct
-      print("New User: ${newUser.runtimeType}");
+      // Stop the loader
+      // FullScreenLoader.stopLoading();
 
-      // Make sure that the repository correctly processes the user model
+      // Save user data
       final userRepository = Get.put(UserRepository());
       await userRepository.saveUserData(newUser);
 
+      // Show success snackbar
       Loaders.successSnackBar(
           title: "Congratulations",
           message: "Your Account has been created! Verify your email to continue");
 
+      // Delay to allow the snackbar to disappear before navigating
+      await Future.delayed(Duration(seconds: 2));  // Adjust the duration as needed
+
+      // Navigate to the VerifyEmail screen
       Get.to(const VerifyEmail());
+
     } catch (e) {
       print(e.toString());
 
-      // Safeguard error handling in case data was of wrong type
+      // Stop the loader if an error occurs
+      FullScreenLoader.stopLoading();
+
+      // Handle errors
       if (e is TypeError) {
         await Loaders.errorSnackBar(
             title: "Data Type Error", message: "Unexpected data format. Please try again.");
       } else {
         await Loaders.errorSnackBar(title: "Oh Snap!", message: e.toString());
       }
-
-      // Debug print statements to track data
-
-      print("Email: ${email.text.runtimeType}");
-      print("Password: ${password.text.runtimeType}");
-      print("Username: ${userName.text.runtimeType}");
-      print("First Name: ${firstName.text.runtimeType}");
-      print("Last Name: ${lastName.text.runtimeType}");
-      print("Phone Number: ${phoneNumber.text.runtimeType}");
-
     }
   }
+
+
+
+
 }
