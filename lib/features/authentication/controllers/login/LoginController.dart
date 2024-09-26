@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/data/repositories/authentication/AuthenticationRepository.dart';
 import 'package:flutter_ecommerce_project/data/repositories/personalisation/userController.dart';
 import 'package:flutter_ecommerce_project/utils/constants/Loaders.dart';
-import 'package:flutter_ecommerce_project/utils/constants/image_strings.dart';
-import 'package:flutter_ecommerce_project/utils/pop_ups/full_screen_loader.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 class LoginController extends GetxController{
@@ -27,7 +25,7 @@ class LoginController extends GetxController{
     try{
       // FullScreenLoader.openLoadingDialog("Logging you in...", SImages.loading);
       if(!loginFormKey.currentState!.validate()){
-        FullScreenLoader.stopLoading();
+        // FullScreenLoader.stopLoading();
         return;
       }
 
@@ -41,7 +39,7 @@ class LoginController extends GetxController{
           title: "Congratulations",
           message: "Your Account has been created! Verify your email to continue");
 
-      await Future.delayed(Duration(seconds: 2));
+      await Future.delayed(const Duration(seconds: 2));
       // FullScreenLoader.stopLoading();
       AuthenticationRepository.instance.screenRedirect();
     }catch(e){

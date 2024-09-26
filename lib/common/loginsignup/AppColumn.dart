@@ -21,7 +21,7 @@ class AppColum extends StatelessWidget {
           image:
           AssetImage(dark ? SImages.whiteLogo : SImages.darkLogo),
         ),
-        SizedBox(height: 20,),
+        const SizedBox(height: 20,),
         Text(
           SText.loginTitle,
           style: Theme.of(context).textTheme.headlineMedium,

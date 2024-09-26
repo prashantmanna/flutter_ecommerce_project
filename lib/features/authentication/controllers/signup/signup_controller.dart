@@ -68,7 +68,7 @@ class SignupController extends GetxController {
 
       // Delay to allow the snackbar to disappear before navigating
        // Adjust the duration as needed
-      await Future.delayed(Duration(seconds: 2));
+      await Future.delayed(const Duration(seconds: 2));
       // Navigate to the VerifyEmail screen
       Get.to( VerifyEmail(email: email.text.trim(),));
 

@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/data/repositories/models/UserModel.dart';
 import 'package:flutter_ecommerce_project/data/repositories/user/user_repository.dart';
 import 'package:flutter_ecommerce_project/utils/constants/Loaders.dart';

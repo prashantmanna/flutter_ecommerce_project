@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/data/repositories/authentication/AuthenticationRepository.dart';
 import 'package:flutter_ecommerce_project/features/authentication/controllers/signup/EmailVerificationController.dart';
-import 'package:flutter_ecommerce_project/features/authentication/screens/login/login.dart';
-import 'package:flutter_ecommerce_project/features/authentication/screens/signup/sucess_screen.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import 'package:flutter_ecommerce_project/utils/helpers/helper_functions.dart';
 import 'package:get/get.dart';

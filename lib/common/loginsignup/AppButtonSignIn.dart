@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/features/authentication/controllers/login/LoginController.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../../utils/constants/colors.dart';
 import '../../utils/constants/image_strings.dart';
@@ -25,7 +24,7 @@ class AppButtonSign extends StatelessWidget {
           ),
           child: IconButton(
             onPressed: ()=>controller.googleSignIn(),
-            icon: Image(
+            icon: const Image(
                 width: SSizes.iconLg,
                 height: SSizes.iconLg,
                 image: AssetImage(SImages.google)),

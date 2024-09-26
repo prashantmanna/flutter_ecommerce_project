@@ -23,7 +23,7 @@ class AuthenticationRepository extends GetxController{
     final user = auth.currentUser;
     if(user != null){
       if(user.emailVerified){
-        Get.offAll(()=>NavigationMenu());
+        Get.offAll(()=>const NavigationMenu());
       }else{
         Get.offAll(()=>VerifyEmail(email: auth.currentUser?.email));
       }
@@ -35,8 +35,6 @@ class AuthenticationRepository extends GetxController{
           ? Get.offAll(() => const Login())
           : Get.offAll(() => const OnboardingScreen());
     }
-
-
   }
 
   Future<UserCredential> registerWithEmailIdAndPassword(String email,String password) async{
@@ -85,7 +83,7 @@ class AuthenticationRepository extends GetxController{
     try{
       await GoogleSignIn().signOut();
       await FirebaseAuth.instance.signOut();
-      Get.offAll(()=>Login());
+      Get.offAll(()=>const Login());
     }catch (e){
       throw "Something went wrong , Please Try Again";
     }
