@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_project/data/repositories/authentication/AuthenticationRepository.dart';
+import 'package:flutter_ecommerce_project/features/authentication/controllers/signup/EmailVerificationController.dart';
 import 'package:flutter_ecommerce_project/features/authentication/screens/login/login.dart';
 import 'package:flutter_ecommerce_project/features/authentication/screens/signup/sucess_screen.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
@@ -7,16 +9,18 @@ import 'package:flutter_ecommerce_project/utils/helpers/helper_functions.dart';
 import 'package:get/get.dart';
 
 class VerifyEmail extends StatelessWidget {
-  const VerifyEmail({super.key});
+  final String? email;
+  const VerifyEmail({super.key,required this.email});
 
   @override
   Widget build(BuildContext context) {
+  final controller = Get.put(VerifyEmailController());
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
-              onPressed: () => Get.offAll(const Login()),
+              onPressed: () => AuthenticationRepository.instance.logout(),
               icon: const Icon(CupertinoIcons.clear))
         ],
       ),
@@ -44,7 +48,7 @@ class VerifyEmail extends StatelessWidget {
                 height: SSizes.spaceBtwItems,
               ),
               Text(
-                "mannaprashant12@gmail.com",
+                email ?? "",
                 style: Theme.of(context).textTheme.labelLarge,
                 textAlign: TextAlign.center,
               ),
@@ -63,13 +67,7 @@ class VerifyEmail extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Get.to(() => SuccessScreen(
-                      text: "Continue",
-                      image: "assets/images/onboarding_photos/techny-user-profile-on-phone-screen.png",
-                      title: "Your account created successfully",
-                      subtitle: "Welcome to ultimate shopping destination.Your account is created.Unleash the joy of seamless online shopping",
-                      callback: () => Get.to(() => const Login()),
-                    ));
+                    Get.to(() => controller.checkEmailVerified());
                   },
                   child: const Text("Continue"),
                 ),
@@ -80,7 +78,7 @@ class VerifyEmail extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () => controller.sendEmailVerification(),
                   child: const Text("Resend Email"),
                 ),
               )

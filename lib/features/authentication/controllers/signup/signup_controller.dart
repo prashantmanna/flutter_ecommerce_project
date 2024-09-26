@@ -23,9 +23,11 @@ class SignupController extends GetxController {
   GlobalKey<FormState> signUpFormKey = GlobalKey<FormState>();
 
   void signup_key_controller() async {
+    // FullScreenLoader.openLoadingDialog("We are processing your information..",SImages.loading);
     try {
       // Validate the form first
       if (!signUpFormKey.currentState!.validate()) {
+        // FullScreenLoader.stopLoading();
         return;
       }
 
@@ -56,10 +58,10 @@ class SignupController extends GetxController {
 
       // Stop the loader
       // FullScreenLoader.stopLoading();
-
       // Save user data
       final userRepository = Get.put(UserRepository());
       await userRepository.saveUserData(newUser);
+      // FullScreenLoader.stopLoading();
 
       // Show success snackbar
       Loaders.successSnackBar(
@@ -67,16 +69,16 @@ class SignupController extends GetxController {
           message: "Your Account has been created! Verify your email to continue");
 
       // Delay to allow the snackbar to disappear before navigating
-      await Future.delayed(Duration(seconds: 2));  // Adjust the duration as needed
-
+       // Adjust the duration as needed
+      await Future.delayed(Duration(seconds: 2));
       // Navigate to the VerifyEmail screen
-      Get.to(const VerifyEmail());
+      Get.to( VerifyEmail(email: email.text.trim(),));
 
     } catch (e) {
       print(e.toString());
 
       // Stop the loader if an error occurs
-      FullScreenLoader.stopLoading();
+      //FullScreenLoader.stopLoading();
 
       // Handle errors
       if (e is TypeError) {

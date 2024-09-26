@@ -68,4 +68,5 @@ class SImages{
 
   //animation
   static const String loading = "assets/animation/loading.json";
+  static const String sucess_email = "assets/animation/sucess_email.json";
 }
