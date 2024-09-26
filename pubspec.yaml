@@ -54,6 +54,7 @@ flutter:
     - assets/images/products/watch/
     - assets/images/payment/
     - assets/animation/
+    - assets/animation/sucess_email.json
 
   fonts:
     - family: Poppins

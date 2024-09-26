@@ -12,13 +12,11 @@ Future<void> main() async {
 
   await GetStorage.init();
 
-
  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform
   ).then((FirebaseApp val) => Get.put(AuthenticationRepository()));
   runApp(const MyApp());
-  FlutterNativeSplash.remove();
 }
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

@@ -37,7 +37,7 @@ class VerifyEmailController extends GetxController{
         Get.off(() => SuccessScreen(
           text: "Verified",
           image: SImages.sucess_email,
-          title: "Email Verified",
+          title: "Email Verification",
           subtitle: "Your email has been verified successfully",
           callback: () => AuthenticationRepository.instance.screenRedirect(),
         ));
@@ -51,7 +51,7 @@ class VerifyEmailController extends GetxController{
     // Check if the user's email is already verified
     if (currUser != null && currUser.emailVerified) {
       Get.off(() => SuccessScreen(
-        text: "Verified",
+        text: "Continue",
         image: SImages.sucess_email,
         title: "Email Verified",
         subtitle: "Your email is successfully registered",

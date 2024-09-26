@@ -25,5 +25,5 @@ class Customtabbar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(SDeviceUtility.getAppBarHeight()*2);
+  Size get preferredSize => Size.fromHeight(SDeviceUtility.getAppBarHeight()*1);
 }

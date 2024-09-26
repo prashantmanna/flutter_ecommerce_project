@@ -46,6 +46,14 @@ class AuthenticationRepository extends GetxController{
     }
   }
 
+
+  Future<UserCredential> loginWithEmailIdAndPassword(String email,String password) async{
+    try{
+      return await auth.signInWithEmailAndPassword(email: email, password: password);
+    }catch(e){
+      throw "Something went wrong , Please try again!";
+    }
+  }
   Future<void> sendEmail() async{
     try{
       await auth.currentUser?.sendEmailVerification();

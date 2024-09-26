@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_project/features/authentication/controllers/login/LoginController.dart';
 import 'package:flutter_ecommerce_project/features/authentication/screens/password_config/forget_password.dart';
 import 'package:flutter_ecommerce_project/features/authentication/screens/signup/signup.dart';
 import 'package:flutter_ecommerce_project/navigation_menu.dart';
+import 'package:flutter_ecommerce_project/utils/validators/validation.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../utils/constants/sizes.dart';
@@ -12,13 +14,18 @@ class AppForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
+
     return Form(
+      key: controller.loginFormKey,
       child: Padding(
         padding: const EdgeInsets.symmetric(
             vertical: SSizes.spaceBtwSections),
         child: Column(
           children: [
             TextFormField(
+              controller: controller.email,
+              validator: (value)=>SValidator.validateEmail(value),
               decoration: const InputDecoration(
                 prefixIcon: Icon(Iconsax.direct_right),
                 labelText: "Enter your Email Address",
@@ -27,11 +34,18 @@ class AppForm extends StatelessWidget {
             const SizedBox(
               height: SSizes.spaceBtwInputFields,
             ),
-            TextFormField(
-              decoration: const InputDecoration(
-                  prefixIcon: Icon(Iconsax.password_check),
-                  labelText: "Enter Your Password",
-                  suffixIcon: Icon(Iconsax.eye_slash)),
+            Obx(
+                  () => TextFormField(
+                controller: controller.password,
+                obscureText: controller.hidePassword.value,
+                validator: (val)=> SValidator.validatePassword(val),
+                decoration:  InputDecoration(
+                    labelText: "Password",
+                    prefixIcon: const Icon(Iconsax.password_check),
+                    suffixIcon: IconButton(onPressed: ()=>controller.hidePassword.value = !controller.hidePassword.value,
+                        icon: Icon(controller.hidePassword.value ? Iconsax.eye_slash : Iconsax.eye))),
+                expands: false,
+              ),
             ),
             const SizedBox(
               height: SSizes.spaceBtwInputFields / 2,
@@ -42,7 +56,10 @@ class AppForm extends StatelessWidget {
                 //remember me
                 Row(
                   children: [
-                    Checkbox(value: true, onChanged: (value) {}),
+                    Obx(() =>Checkbox(value: controller.rememberMe.value, onChanged: (value) {
+                      controller.rememberMe.value = !controller.rememberMe.value;
+                    },
+                    )),
                     const Text("Remember Me")
                   ],
                 ),
@@ -57,9 +74,10 @@ class AppForm extends StatelessWidget {
             ),
             SizedBox(
               width: double.infinity,
-              child: ElevatedButton(
-                  onPressed: () {
-                    Get.offAll(()=> const NavigationMenu());
+              child: ElevatedButton (
+
+                  onPressed: ()  {
+                    controller.login();
                   }, child: const Text("Sign In")),
             ),
             const SizedBox(

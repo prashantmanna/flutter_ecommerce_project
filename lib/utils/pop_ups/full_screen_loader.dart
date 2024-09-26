@@ -28,7 +28,9 @@ class FullScreenLoader{
 
 
     static stopLoading() {
-       Navigator.of(Get.overlayContext!).pop();
+      if(Get.isDialogOpen == true){
+        Navigator.of(Get.context!).pop();
+      }
     }
 
 

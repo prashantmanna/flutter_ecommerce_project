@@ -5,8 +5,6 @@ import 'package:flutter_ecommerce_project/features/authentication/screens/signup
 import 'package:get/get.dart';
 import '../../../../data/repositories/models/UserModel.dart';
 import '../../../../utils/constants/Loaders.dart';
-import '../../../../utils/constants/image_strings.dart';
-import '../../../../utils/pop_ups/full_screen_loader.dart';
 
 class SignupController extends GetxController {
   static SignupController get instance => Get.find();
