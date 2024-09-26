@@ -45,7 +45,7 @@ class LoginController extends GetxController{
       // FullScreenLoader.stopLoading();
       AuthenticationRepository.instance.screenRedirect();
     }catch(e){
-      FullScreenLoader.stopLoading();
+      // FullScreenLoader.stopLoading();
       Loaders.errorSnackBar(title: "Oh Snap1",message: e.toString());
     }
   }
