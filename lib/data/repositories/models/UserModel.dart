@@ -21,7 +21,17 @@ class UserModel {
 
   String get fullName => '$firstName $lastName';
   String get formattedPhoneNo => Formatter.formatPhoneNumber(phoneNumber);
+  static String generateName(fullName){
+    List<String> nameParts = fullName.split(" ");
+    String firstName = nameParts[0].toLowerCase();
+    String lastName = nameParts.length>1?nameParts[1].toLowerCase() : "";
 
+    String camelCaseUserName = "$firstName$lastName";
+    String userNameWithPrefix = "cwt_$camelCaseUserName";
+    return userNameWithPrefix;
+
+
+  }
   static List<String> nameParts(String fullName) => fullName.split(" ");
 
   static UserModel empty() => UserModel(

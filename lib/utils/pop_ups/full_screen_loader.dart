@@ -9,10 +9,13 @@ class FullScreenLoader{
     showDialog(
         context: Get.overlayContext!,
         barrierDismissible: false,
-        builder: (_)=> PopScope(child: Container(
+        builder: (_)=> PopScope(
+            canPop: false,
+            child: Container(
           color: SHelperFunctions.isDarkMode(Get.context!) ? Scolors.dark : Colors.white,
           width: double.infinity,
           height: double.infinity,
+
           child: Column(
             children: [
               const SizedBox(
@@ -28,9 +31,7 @@ class FullScreenLoader{
 
 
     static stopLoading() {
-      if(Get.isDialogOpen == true){
-        Navigator.of(Get.context!).pop();
-      }
+      Navigator.of(Get.overlayContext!).pop();
     }
 
 

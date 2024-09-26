@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_project/features/authentication/controllers/login/LoginController.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../../utils/constants/colors.dart';
 import '../../utils/constants/image_strings.dart';
@@ -11,6 +14,7 @@ class AppButtonSign extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -19,10 +23,12 @@ class AppButtonSign extends StatelessWidget {
             border: Border.all(color: Scolors.grey),
             borderRadius: BorderRadius.circular(100),
           ),
-          child: const Image(
-            width: SSizes.iconLg,
-            height: SSizes.iconLg,
-            image: AssetImage(SImages.google),
+          child: IconButton(
+            onPressed: ()=>controller.googleSignIn(),
+            icon: Image(
+                width: SSizes.iconLg,
+                height: SSizes.iconLg,
+                image: AssetImage(SImages.google)),
           ),
         ),
         const SizedBox(
@@ -33,10 +39,13 @@ class AppButtonSign extends StatelessWidget {
             border: Border.all(color: Scolors.grey),
             borderRadius: BorderRadius.circular(100),
           ),
-          child: const Image(
-            width: SSizes.iconLg,
-            height: SSizes.iconLg,
-            image: AssetImage(SImages.facebook),
+          child: IconButton(
+            onPressed: (){},
+            icon: const Image(
+              width: SSizes.iconLg,
+              height: SSizes.iconLg,
+              image: AssetImage(SImages.facebook),
+            ),
           ),
         )
       ],

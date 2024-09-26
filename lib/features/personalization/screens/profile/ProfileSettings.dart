@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/common/custom_shapes/PrimaryHeaderContainer.dart';
 import 'package:flutter_ecommerce_project/common/widgets/appbar/CustomAppBar.dart';
 import 'package:flutter_ecommerce_project/common/widgets/product_text/Sectionheading.dart';
+import 'package:flutter_ecommerce_project/data/repositories/authentication/AuthenticationRepository.dart';
 import 'package:flutter_ecommerce_project/features/authentication/screens/login/login.dart';
 import 'package:flutter_ecommerce_project/features/personalization/screens/address/address.dart';
 import 'package:flutter_ecommerce_project/features/personalization/screens/profile/user_profile/ProfileScreen.dart';
@@ -67,7 +68,7 @@ class ProfileSettings extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: OutlinedButton(
-                    onPressed: ()=>Get.to(const Login()),
+                    onPressed: ()=>AuthenticationRepository.instance.logout(),
                     child: const Text("Logout"),
                   ),
                 )
