@@ -1,3 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
+
 import '../../../utils/device/Formatter.dart';
 
 class UserModel {
@@ -53,4 +56,5 @@ class UserModel {
       'profilePicture': profilePicture,
     };
   }
+
 }

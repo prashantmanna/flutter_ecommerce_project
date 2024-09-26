@@ -13,6 +13,8 @@ class AuthenticationRepository extends GetxController{
   static AuthenticationRepository get instance => Get.find();
   final deviceStorage = GetStorage();
   final auth = FirebaseAuth.instance;
+
+  User? get authUser => auth.currentUser;
   @override
   void onReady() {
     FlutterNativeSplash.remove();
@@ -86,6 +88,14 @@ class AuthenticationRepository extends GetxController{
       Get.offAll(()=>const Login());
     }catch (e){
       throw "Something went wrong , Please Try Again";
+    }
+  }
+
+  Future<void> sendPasswordEmailReset(String email)async{
+    try{
+      await auth.sendPasswordResetEmail(email: email);
+    }catch(e){
+      throw "Something went wrong,Please try again";
     }
   }
 }
