@@ -31,6 +31,7 @@ class HomeAppBar extends StatelessWidget {
               return const SShimmer(width: 80, height: 15);
             } else {
               final fullName = controller.user.value.fullName;
+              print(controller.user.value.fullName);
               return Text(
                 controller.user.value.fullName,style: Theme.of(context).textTheme.headlineMedium?.apply(color: Colors.white)
               );
