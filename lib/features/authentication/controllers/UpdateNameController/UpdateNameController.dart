@@ -38,7 +38,7 @@ class UpdateNameController extends GetxController{
       userController.user.value.lastName = lastName.text.trim();
 
       Loaders.successSnackBar(title: "Congrats",message: "Your name updated successfully");
-      Get.off(()=>ProfileScreen());
+      Get.off(()=>const ProfileScreen());
     }catch(e){
       Loaders.errorSnackBar(title: "Oh Snap",message: e.toString());
     }

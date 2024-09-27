@@ -1,5 +1,7 @@
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_ecommerce_project/data/repositories/user/user_repository.dart';
 import 'package:flutter_ecommerce_project/features/authentication/screens/login/login.dart';
 import 'package:flutter_ecommerce_project/features/authentication/screens/onboardingpage/onboarding.dart';
 import 'package:flutter_ecommerce_project/features/authentication/screens/signup/verify_email.dart';
@@ -96,6 +98,23 @@ class AuthenticationRepository extends GetxController{
       await auth.sendPasswordResetEmail(email: email);
     }catch(e){
       throw "Something went wrong,Please try again";
+    }
+  }
+
+  Future<void> reAuthenticateWithEmailIdAndPassword(String email,String password) async{
+    try{
+      AuthCredential authCredential = EmailAuthProvider.credential(email: email, password: password);
+      await auth.currentUser!.reauthenticateWithCredential(authCredential);
+    }catch(e){
+      throw "Something went wrong, Please try again";
+    }
+  }
+  Future<void> deleteAccount() async{
+    try{
+      await UserRepository.instance.removeUserRecord(auth.currentUser!.uid);
+      await auth.currentUser!.delete();
+    }catch(e){
+      throw "Something went wrong, Please try again";
     }
   }
 }

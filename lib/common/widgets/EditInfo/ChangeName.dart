@@ -38,7 +38,7 @@ class ChangeName extends StatelessWidget {
                     prefixIcon: Icon(Iconsax.user)
                   )
                 ),
-                SizedBox(height: SSizes.spaceBtwItems,),
+                const SizedBox(height: SSizes.spaceBtwItems,),
                 TextFormField(
                     controller: controller.lastName,
                     validator: (value)=> SValidator.validateEmptyText("First Name", value),
@@ -51,7 +51,7 @@ class ChangeName extends StatelessWidget {
                 const SizedBox(height: SSizes.spaceBtwItems,),
                 SizedBox(
                     width: double.infinity,
-                    child: ElevatedButton(onPressed: ()=> controller.updateUserName(), child: Text("Update")))
+                    child: ElevatedButton(onPressed: ()=> controller.updateUserName(), child: const Text("Update")))
               ],
             ),
           )

@@ -54,4 +54,11 @@ class UserRepository extends GetxController{
     }
   }
 
+  Future<void> removeUserRecord(String uid) async{
+    try{
+      await _db.collection("Users").doc(uid).delete();
+    }catch(e){
+      throw "Something went wrong , Please try again";
+    }
+  }
 }

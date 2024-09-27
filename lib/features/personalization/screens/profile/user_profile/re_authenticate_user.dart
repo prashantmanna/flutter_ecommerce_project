@@ -12,10 +12,10 @@ class ReAuthenticateUser extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = UserController.instance;
     return Scaffold(
-      appBar: CustomAppbar(
+      appBar: const CustomAppbar(
         title: Text("Re-Authenticate User",),
       ),
-      body: Padding(padding: EdgeInsets.all(SSizes.defaultSpace),child:
+      body: Padding(padding: const EdgeInsets.all(SSizes.defaultSpace),child:
         Form(
           key: controller.reAuthFormKey,
           child: Column(
@@ -23,21 +23,26 @@ class ReAuthenticateUser extends StatelessWidget {
               TextFormField(
                 controller: controller.verifyEmail,
                 validator: (value) => SValidator.validateEmail(value),
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   prefixIcon: Icon(Iconsax.direct_right),
                   labelText: "Enter Email"
                 ),
               ),
-              SizedBox(height: SSizes.spaceBtwItems,),
+              const SizedBox(height: SSizes.spaceBtwItems,),
               TextFormField(
                 controller: controller.verifyPassword,
                 obscureText: controller.hidePassword.value,
                 validator: (value) => SValidator.validatePassword(value),
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     prefixIcon: Icon(Iconsax.direct_right),
                     labelText: "Enter Email"
                 ),
               ),
+              const SizedBox(height: SSizes.spaceBtwItems,),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(onPressed: ()=>controller.reAuthenticateEmailAndPassword(), child: const Text("Verify")),
+              )
 
             ],
           ),
