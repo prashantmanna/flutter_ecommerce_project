@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_project/data/repositories/personalisation/userController.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../../common/icons/CircularIcon.dart';
@@ -13,15 +14,15 @@ class UserProfileTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance;
     return ListTile(
       leading:  const SCircularIcon(
         icon: Icons.person,
         width: 50,
         height: 50,
-
       ),
-      title: Text("Prashant Manna",style: Theme.of(context).textTheme.headlineSmall!.apply(color: Colors.white),),
-      subtitle: Text("manprashant99@gmail.com",style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white),),
+      title: Text(controller.user.value.fullName,style: Theme.of(context).textTheme.headlineSmall!.apply(color: Colors.white),),
+      subtitle: Text(controller.user.value.email,style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white),),
       trailing: IconButton(onPressed: onPressed,icon: const Icon(Iconsax.edit),color: Colors.white,),
     );
   }

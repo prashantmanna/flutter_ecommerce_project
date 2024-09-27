@@ -17,16 +17,41 @@ class UserRepository extends GetxController{
     }
   }
 
-  Future<void> fetchUserData() async{
+  Future<UserModel> fetchUserData() async{
     try{
       final doc = await _db.collection('Users').doc(AuthenticationRepository.instance.authUser?.uid).get();
       if(doc.exists){
         return UserModel.fromSnapshot(doc);
+      }else {
+        return UserModel.empty();
       }
     } catch(e){
       throw "Something went wrong , Please try again!";
     }
   }
 
+  Future<void> updateUserData(UserModel updatedUser) async{
+    try{
+      await _db.collection("Users").doc(updatedUser.id).update(updatedUser.toJson());
+    }catch(e){
+        throw "Something went wrong , Please try again";
+    }
+  }
+
+  Future<void> updateSingleField(Map<String,dynamic> json)async{
+    try{
+      await _db.collection("Users").doc(AuthenticationRepository.instance.authUser?.uid).update(json);
+    } catch(e){
+      throw "Something went wrong , Please try again";
+    }
+  }
+
+  Future<void> deleteData(String uid) async{
+    try{
+      await _db.collection("Users").doc(uid).delete();
+    }catch(e){
+      throw "Something went wrong, Please try again";
+    }
+  }
 
 }
