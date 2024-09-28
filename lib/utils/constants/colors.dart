@@ -42,6 +42,7 @@ class Scolors{
   static const Color softGrey = Color(0xfff4f4f4);
   static const Color lightGrey = Color(0xfff9f9f9);
   static const Color white = Color(0xffffffff);
+  static const Color blue = Color(0xff0000ff);
 
   //gradient colors
   static const Gradient linearGradient = LinearGradient(
