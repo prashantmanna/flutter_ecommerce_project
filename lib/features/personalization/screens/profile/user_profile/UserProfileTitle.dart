@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/data/repositories/personalisation/userController.dart';
 import 'package:iconsax/iconsax.dart';
@@ -17,9 +18,10 @@ class UserProfileTitle extends StatelessWidget {
     final controller = UserController.instance;
     return ListTile(
       leading:  const SCircularIcon(
-        icon: Icons.person,
+        icon: CupertinoIcons.person,
         width: 50,
         height: 50,
+        color: Colors.red,
       ),
       title: Text(controller.user.value.fullName,style: Theme.of(context).textTheme.headlineSmall!.apply(color: Colors.white),),
       subtitle: Text(controller.user.value.email,style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white),),

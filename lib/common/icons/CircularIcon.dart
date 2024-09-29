@@ -10,6 +10,7 @@ class SCircularIcon extends StatelessWidget {
     this.bgColor,
     this.onPressed, this.width, this.height,
     this.size = SSizes.lg,
+    this.isNetworkImage = false
   });
   final double? width,height;
   final double? size;
@@ -17,6 +18,7 @@ class SCircularIcon extends StatelessWidget {
   final Color? color;
   final Color? bgColor;
   final VoidCallback? onPressed;
+  final bool isNetworkImage;
   @override
   Widget build(BuildContext context) {
     return Container(

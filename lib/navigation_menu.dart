@@ -7,7 +7,6 @@ import 'package:flutter_ecommerce_project/utils/constants/colors.dart';
 import 'package:flutter_ecommerce_project/utils/helpers/helper_functions.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
 
