@@ -4,6 +4,7 @@ import 'package:flutter_ecommerce_project/common/images/SCircularWidget.dart';
 import 'package:flutter_ecommerce_project/common/widgets/EditInfo/ChangeName.dart';
 import 'package:flutter_ecommerce_project/common/widgets/appbar/CustomAppBar.dart';
 import 'package:flutter_ecommerce_project/common/widgets/product_text/Sectionheading.dart';
+import 'package:flutter_ecommerce_project/common/widgets/shimmer/SShimmer.dart';
 import 'package:flutter_ecommerce_project/data/repositories/personalisation/userController.dart';
 import 'package:flutter_ecommerce_project/features/personalization/screens/profile/user_profile/ProfileInfo.dart';
 import 'package:flutter_ecommerce_project/utils/constants/image_strings.dart';
@@ -29,8 +30,16 @@ class ProfileScreen extends StatelessWidget {
            width: double.infinity,
            child: Column(
              children: [
-            const SCircularWidget(url: SImages.profile,width: 80,height: 80,),
-               TextButton(onPressed: (){}, child: const Text("Change Profile Picture"))
+            Obx((){
+              final networkImage = controller.user.value.profilePicture;
+              final image = networkImage != null ? networkImage : SImages.profile;
+
+              return controller.imageUploading.value
+                ? SShimmer(width: 80, height: 80,radius: 80,)
+                :SCircularWidget(url: image,width: 80,height: 80,isNetworkImage: true,bgColor: Colors.yellow,);
+
+            }),
+               TextButton(onPressed: ()=>controller.uploadUserProfilePicture(), child: const Text("Change Profile Picture"))
              ],
            ),
            ),

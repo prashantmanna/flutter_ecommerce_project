@@ -8,11 +8,14 @@ import 'package:flutter_ecommerce_project/features/personalization/screens/profi
 import 'package:flutter_ecommerce_project/utils/constants/Loaders.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import 'package:get/get.dart';
+import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 class UserController extends GetxController{
   static UserController get instance => Get.find();
   final userRepository = Get.put(UserRepository());
   final profileLoading = true.obs;
+  final imageUploading = false.obs;
   final hidePassword = true.obs;
   final verifyEmail = TextEditingController();
   final verifyPassword = TextEditingController();
@@ -21,6 +24,8 @@ class UserController extends GetxController{
   Rx<UserModel> user = UserModel.empty().obs;
   Future<void> saveUserRecord(UserCredential? userCredential) async{
     try{
+      await FetchUserRecord();
+      if(user.value.id){
       if(userCredential != null){
         final nameParts = UserModel.nameParts(userCredential.user!.displayName ?? "");
         final userName = UserModel.generateName(userCredential.user!.displayName ?? "");
@@ -33,9 +38,10 @@ class UserController extends GetxController{
             phoneNumber: userCredential.user!.phoneNumber ?? " ",
             profilePicture: userCredential.user!.photoURL ?? "");
         await userRepository.saveUserData(user);
-
       }
-    }catch(e){
+    }
+    }
+    catch(e){
       Loaders.errorSnackBar(title: "Data not saved",
       message: "Something went wrong!!");
     }
@@ -65,26 +71,20 @@ class UserController extends GetxController{
       contentPadding: const EdgeInsets.all(SSizes.md),
       title: "Delete Account",
       middleText: "Are you sure you want to delete your account permanently?",
-      confirm: ElevatedButton(
-        onPressed: () async => deleteUserAccount(),
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.red,
-          side: const BorderSide(color: Colors.red),
-        ),
-        child: const Padding(
-          padding: EdgeInsets.symmetric(horizontal: SSizes.lg),
-          child: Text("Delete"),
-        ),
-      ),
-      cancel: OutlinedButton(
-        onPressed: () {
-          // Ensure that a dialog is open before attempting to close it
-          Navigator.of(Get.overlayContext!).canPop();
-        },
-        child: const Text("Cancel"),
-      ),
+      textConfirm: "Confirm",
+      textCancel: "Cancel",
+      onCancel: (){
+        print("cancel button clicked");
+        Navigator.of(Get.context!).pop();
+      },
+      onConfirm: ()
+          {
+            Navigator.of(Get.context!).pop();
+          },
+      barrierDismissible: true
     );
   }
+
 
 
 
@@ -120,4 +120,34 @@ class UserController extends GetxController{
 
     }
   }
+
+  Future<void> uploadUserProfilePicture() async{
+    try {
+      final image = await ImagePicker().pickImage(
+          source: ImageSource.gallery,
+          imageQuality: 70,
+          maxHeight: 512,
+          maxWidth: 512);
+
+      if (image != null) {
+        final imageUrl = await userRepository.uploadImage(
+            "Users/Images/Profile/", image);
+        imageUploading.value = true;
+        Map<String, dynamic> json = {
+          "profilePicture": imageUrl
+        };
+
+        await userRepository.updateSingleField(json);
+
+        user.value.profilePicture = imageUrl;
+        user.refresh();
+        Loaders.successSnackBar(title: "Congratulations",message: "Profile Updated Successfully");
+      }
+    }catch(e){
+      Loaders.errorSnackBar(title: "Oh Snap",message: e.toString());
+    }finally{
+      imageUploading.value = false;
+    }
+  }
+
 }

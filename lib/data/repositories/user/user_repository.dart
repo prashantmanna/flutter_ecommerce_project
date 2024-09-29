@@ -1,6 +1,10 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_ecommerce_project/data/repositories/authentication/AuthenticationRepository.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../models/UserModel.dart';
 
@@ -59,6 +63,19 @@ class UserRepository extends GetxController{
       await _db.collection("Users").doc(uid).delete();
     }catch(e){
       throw "Something went wrong , Please try again";
+    }
+  }
+
+  Future<String> uploadImage(String path,XFile image) async{
+    try{
+      final ref = FirebaseStorage.instance.ref(path).child(image.name);
+      await ref.putFile(File(image.path));
+
+      final url = ref.getDownloadURL();
+      return url;
+
+    }catch(e){
+      throw "Something went wrong,";
     }
   }
 }

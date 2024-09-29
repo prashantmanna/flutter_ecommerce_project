@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_project/common/widgets/shimmer/SShimmer.dart';
 
 import '../../utils/constants/sizes.dart';
 import '../../utils/helpers/helper_functions.dart';
@@ -34,12 +36,19 @@ class SCircularWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(100),
 
       ),
-      child: Center(
-
-        child: Image(
-          fit: fit,
-          image: isNetworkImage?NetworkImage(url):AssetImage(url) as ImageProvider,
-          color: overlayColor,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(100),
+        child: Center(
+        
+          child:
+          isNetworkImage ?  CachedNetworkImage(imageUrl: url,fit: fit,color: overlayColor,
+            progressIndicatorBuilder: (context,url,downloadProgress)=>SShimmer(width: 55, height: 55,radius: 55,),
+            errorWidget: (context,url,error)=> Icon(Icons.error),
+          ):Image(
+            fit: fit,
+            image: isNetworkImage?NetworkImage(url):AssetImage(url) as ImageProvider,
+            color: overlayColor,
+          ),
         ),
       ),
     );
