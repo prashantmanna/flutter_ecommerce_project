@@ -14,7 +14,6 @@ class Customtabbar extends StatelessWidget implements PreferredSizeWidget {
     return Material(
       color: dark ? Colors.black:Colors.white,
       child: TabBar(
-
         tabs: tabs,
         isScrollable: true,
         indicatorColor: Scolors.primaryColor,
@@ -25,5 +24,5 @@ class Customtabbar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(SDeviceUtility.getAppBarHeight()*1);
+  Size get preferredSize => Size.fromHeight(SDeviceUtility.getAppBarHeight()*1.2);
 }

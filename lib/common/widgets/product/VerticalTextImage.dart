@@ -1,4 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_project/common/widgets/shimmer/SShimmer.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/sizes.dart';
@@ -11,12 +14,14 @@ class VerticalImageText extends StatelessWidget {
     this.textColor = Scolors.white,
     this.bgColor = Scolors.white,
     required this.onTap,
+    this.isNetworkImage = true
   });
 
   final String image,title;
   final Color textColor;
   final Color? bgColor;
   final void Function() onTap;
+  final bool isNetworkImage;
   @override
   Widget build(BuildContext context) {
     final dark = SHelperFunctions.isDarkMode(context);
@@ -36,12 +41,12 @@ class VerticalImageText extends StatelessWidget {
                 color: bgColor ?? (dark ? Scolors.black:Scolors.white),
               ),
               child: Center(
-                child: Image(
-                  image: AssetImage(image),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
+                child: isNetworkImage ?
+                    CachedNetworkImage(imageUrl: image,fit: BoxFit.fill,progressIndicatorBuilder: (context,url,downloadProgress)=>SShimmer(width: 55, height: 55,radius: 55,),
+                      errorWidget: (context,url,error)=> Icon(Icons.error),
+                    ) :
+                    Image(image: AssetImage(image),fit: BoxFit.fill,)
+            ),),
             const SizedBox(
               height: SSizes.spaceBtwItems / 2,
             ),
