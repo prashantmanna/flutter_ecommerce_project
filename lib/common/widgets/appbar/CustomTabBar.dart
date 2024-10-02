@@ -17,7 +17,7 @@ class Customtabbar extends StatelessWidget implements PreferredSizeWidget {
         tabs: tabs,
         isScrollable: true,
         indicatorColor: Scolors.primaryColor,
-        labelColor: dark ? Colors.white:Scolors.primaryColor,
+        labelColor: Color(0xff0C359E),
         unselectedLabelColor: Scolors.darkGrey,
       ),
     );
