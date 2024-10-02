@@ -20,6 +20,9 @@ class CategoryTab extends StatelessWidget {
           children: [
             const SBrandProducts(
               images: [
+
+
+
                 SImages.watch1,
                 SImages.watch2,
                 SImages.watch3
