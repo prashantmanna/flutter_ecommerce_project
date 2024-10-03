@@ -32,10 +32,10 @@ class ProfileScreen extends StatelessWidget {
              children: [
             Obx((){
               final networkImage = controller.user.value.profilePicture;
-              final image = networkImage != null ? networkImage : SImages.profile;
+              final image = networkImage ?? SImages.profile;
 
               return controller.imageUploading.value
-                ? SShimmer(width: 80, height: 80,radius: 80,)
+                ? const SShimmer(width: 80, height: 80,radius: 80,)
                 :SCircularWidget(url: image,width: 80,height: 80,isNetworkImage: true,bgColor: Colors.yellow,);
 
             }),

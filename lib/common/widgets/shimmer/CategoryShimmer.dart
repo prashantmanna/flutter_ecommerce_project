@@ -14,14 +14,14 @@ class CategoryShimmer extends StatelessWidget {
         (
         shrinkWrap: true,
           scrollDirection: Axis.horizontal,
-          itemBuilder: (_,__)=> Column(
+          itemBuilder: (_,__)=> const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SShimmer(width: 55, height: 55,radius: 55,),
           SizedBox(height: SSizes.spaceBtwItems/2,),
           SShimmer(width: 55, height: 8)
         ],
-      ), separatorBuilder: (_,__)=>SizedBox(width: SSizes.spaceBtwItems,),
+      ), separatorBuilder: (_,__)=>const SizedBox(width: SSizes.spaceBtwItems,),
           itemCount: itemCount),
     );
   }
