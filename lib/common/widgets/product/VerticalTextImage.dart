@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/common/widgets/shimmer/SShimmer.dart';
-import 'package:iconsax/iconsax.dart';
 
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/sizes.dart';
@@ -42,8 +41,8 @@ class VerticalImageText extends StatelessWidget {
               ),
               child: Center(
                 child: isNetworkImage ?
-                    CachedNetworkImage(imageUrl: image,fit: BoxFit.fill,progressIndicatorBuilder: (context,url,downloadProgress)=>SShimmer(width: 55, height: 55,radius: 55,),
-                      errorWidget: (context,url,error)=> Icon(Icons.error),
+                    CachedNetworkImage(imageUrl: image,fit: BoxFit.fill,progressIndicatorBuilder: (context,url,downloadProgress)=>const SShimmer(width: 55, height: 55,radius: 55,),
+                      errorWidget: (context,url,error)=> const Icon(Icons.error),
                     ) :
                     Image(image: AssetImage(image),fit: BoxFit.fill,)
             ),),

@@ -42,8 +42,8 @@ class SCircularWidget extends StatelessWidget {
         
           child:
           isNetworkImage ?  CachedNetworkImage(imageUrl: url,fit: fit,color: overlayColor,
-            progressIndicatorBuilder: (context,url,downloadProgress)=>SShimmer(width: 55, height: 55,radius: 55,),
-            errorWidget: (context,url,error)=> Icon(Icons.error),
+            progressIndicatorBuilder: (context,url,downloadProgress)=>const SShimmer(width: 55, height: 55,radius: 55,),
+            errorWidget: (context,url,error)=> const Icon(Icons.error),
           ):Image(
             fit: fit,
             image: isNetworkImage?NetworkImage(url):AssetImage(url) as ImageProvider,

@@ -8,7 +8,6 @@ import 'package:flutter_ecommerce_project/features/personalization/screens/profi
 import 'package:flutter_ecommerce_project/utils/constants/Loaders.dart';
 import 'package:flutter_ecommerce_project/utils/constants/sizes.dart';
 import 'package:get/get.dart';
-import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
 class UserController extends GetxController{
