@@ -34,7 +34,6 @@ class CategoryController extends GetxController{
       reloading.value = false;
     }
   }
-
   Future<void> uploadData(List<CategoryModel> categories) async{
     try{
       final storage = Get.put(FirebaseStorageService());

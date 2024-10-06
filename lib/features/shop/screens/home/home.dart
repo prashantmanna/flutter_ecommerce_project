@@ -28,11 +28,12 @@ class HomeScreen extends StatelessWidget {
               children: [
                 HomeAppBar(),
                 SizedBox(
-                  height: SSizes.spaceBtwSections,
+                  height: SSizes.spaceBtwItems,
                 ),
                 //search bar
                 mySearchBar(
                   text: "Search in here",
+
                 ),
                 SizedBox(
                   height: SSizes.spaceBtwSections,

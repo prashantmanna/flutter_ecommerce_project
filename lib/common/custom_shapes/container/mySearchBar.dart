@@ -25,22 +25,11 @@ class mySearchBar extends StatelessWidget {
     final dark = SHelperFunctions.isDarkMode(context);
     return Padding(
       padding: padding,
-      child: Container(
-        width: SDeviceUtility.getScreenWidth(context),
-        padding: const EdgeInsets.all(SSizes.md),
-        decoration: BoxDecoration(
-            color: showBackground?dark?Scolors.black:Scolors.white:Colors.transparent,
-            borderRadius: BorderRadius.circular(SSizes.cardRadiusLg),
-            border: showBorder ? Border.all(color: Scolors.grey) : null
-        ),
-        child: Row(
-          children: [
-            Icon(iconData,color: Scolors.darkerGrey,),
-            const SizedBox(width: SSizes.spaceBtwItems,),
-            Text(text,style: Theme.of(context).textTheme.bodySmall,),
-          ],
-        ),
-      ),
+      child: SearchBar(
+        hintText: "Search in Here",
+        leading: Icon(Icons.search),
+
+      )
     );
   }
 }
