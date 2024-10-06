@@ -3,6 +3,7 @@ import 'package:flutter_ecommerce_project/features/shop/models/category_model.da
 import 'package:get/get.dart';
 
 class CategoryRepository extends GetxController{
+  static CategoryRepository get instance => Get.find();
   final db = FirebaseFirestore.instance;
 
   Future<List<CategoryModel>> getAllCategories() async{

@@ -15,30 +15,50 @@ class HomeCategories extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(CategoryController());
     return Obx(
-
       () {
-        if(controller.reloading.value) return const CategoryShimmer();
-        if(controller.featuredCategory.isEmpty){
+        if (controller.reloading.value) {
+          return const CategoryShimmer();
+        }
+        if (controller.featuredCategory.isEmpty) {
           return Center(
-            child: Text("No Data Found",style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white),),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(
+                  Icons.error_outline,
+                  color: Colors.white,
+                  size: 40,
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  "No Data Found",
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyMedium!
+                      .apply(color: Colors.white),
+                ),
+              ],
+            ),
+          );
+        } else {
+          return SizedBox(
+            height: 80,
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: controller.featuredCategory.length,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (_, index) {
+                final item = controller.featuredCategory[index];
+                return VerticalImageText(
+                  image: item.image,
+                  title: item.name,
+                  onTap: () => Get.to(const SubCategory()),
+                );
+              },
+            ),
           );
         }
-          return SizedBox(
-        height: 80,
-        child: ListView.builder(
-            shrinkWrap: true,
-            itemCount: controller.featuredCategory.length,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (_, index) {
-              final item = controller.featuredCategory[index];
-              return  VerticalImageText(
-                image: item.image,
-                title: item.name,
-                onTap: ()=>Get.to(const SubCategory()),
-              );
-            }),
-      );}
-    );
+      });
   }
 }
 

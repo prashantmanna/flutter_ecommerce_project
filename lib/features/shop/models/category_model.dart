@@ -27,10 +27,10 @@ class CategoryModel{
   }
   factory CategoryModel.fromSnapshot(DocumentSnapshot<Map<String,dynamic>> document){
     if(document.data() != null){
-      final data = document.data();
+      final data = document.data()!;
       return CategoryModel(
           id: document.id,
-          name: data!["Name"] ?? "",
+          name: data["Name"] ?? "",
           image: data["Image"] ?? "",
           parentId: data["ParentId"] ?? "",
           isFeatured: data["isFeatured"] ?? false

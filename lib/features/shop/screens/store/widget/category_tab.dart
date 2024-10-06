@@ -5,7 +5,6 @@ import 'package:flutter_ecommerce_project/common/widgets/products_cards/ProductV
 import '../../../../../common/widgets/products_cards/SBrandProducts.dart';
 import '../../../../../utils/constants/image_strings.dart';
 import '../../../../../utils/constants/sizes.dart';
-
 class CategoryTab extends StatelessWidget {
   const CategoryTab({super.key});
 
@@ -19,7 +18,6 @@ class CategoryTab extends StatelessWidget {
           children: [
             const SBrandProducts(
               images: [
-                
                 SImages.watch1,
                 SImages.watch2,
                 SImages.watch3
