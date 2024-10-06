@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_project/common/layouts/SGridLayout.dart';
 import 'package:flutter_ecommerce_project/common/widgets/product_text/Sectionheading.dart';
 import 'package:flutter_ecommerce_project/common/widgets/products_cards/ProductVertical.dart';
-
 import '../../../../../common/widgets/products_cards/SBrandProducts.dart';
 import '../../../../../utils/constants/image_strings.dart';
 import '../../../../../utils/constants/sizes.dart';
