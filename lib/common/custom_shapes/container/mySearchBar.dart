@@ -25,10 +25,9 @@ class mySearchBar extends StatelessWidget {
     final dark = SHelperFunctions.isDarkMode(context);
     return Padding(
       padding: padding,
-      child: SearchBar(
+      child: const SearchBar(
         hintText: "Search in Here",
         leading: Icon(Icons.search),
-
       )
     );
   }
