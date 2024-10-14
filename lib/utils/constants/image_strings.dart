@@ -27,6 +27,10 @@ class SImages{
   static const String banner1 = "assets/images/banner/banner1.jpeg";
   static const String banner2 = "assets/images/banner/banner2.jpeg";
   static const String banner3 = "assets/images/banner/banner3.jpeg";
+  static const String banner4 = "assets/images/banner/eco_banner1.jpeg";
+  static const String banner5 = "assets/images/banner/eco_banner2.png";
+  static const String banner6 = "assets/images/banner/eco_banner3.png";
+
 
   //bag
   static const String bag1 = "assets/images/products/bag/bag1.png";

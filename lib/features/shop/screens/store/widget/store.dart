@@ -54,9 +54,6 @@ class Store extends StatelessWidget {
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
                     children: [
-                      const SizedBox(
-                        height: SSizes.spaceBtwItems,
-                      ),
                       const mySearchBar(
                         text: "Search In Store",
                         showBorder: true,
