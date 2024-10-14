@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_ecommerce_project/data/repositories/categories/CategoryRepository.dart';
 import 'package:flutter_ecommerce_project/features/shop/models/category_model.dart';
 import 'package:flutter_ecommerce_project/utils/constants/Loaders.dart';
@@ -43,7 +42,7 @@ class CategoryController extends GetxController{
         category.image = url;
         await db.collection("categories").doc(category.id).set(category.toJson());
       }
-    }on FirebaseException catch(e){
+    }on FirebaseException {
       throw "Something went wrong, Please Try again";
     }
   }

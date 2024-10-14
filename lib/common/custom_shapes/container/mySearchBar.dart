@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-
-import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/sizes.dart';
-import '../../../utils/device/device_utility.dart';
 import '../../../utils/helpers/helper_functions.dart';
 
 class mySearchBar extends StatelessWidget {
@@ -15,7 +12,6 @@ class mySearchBar extends StatelessWidget {
     this.showBorder = true,
     this.padding = const EdgeInsets.symmetric(horizontal: SSizes.defaultSpace)
   });
-
   final String text;
   final IconData? iconData;
   final bool showBackground,showBorder;
